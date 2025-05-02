@@ -3,5 +3,8 @@
   position:relative;
   background-color:white;
   color:$black;
-  padding:60px 0px 0px 0px;
+  padding:60px 0px 50vh 0px;
+  margin:0px 0px 70px 0px;
+  border-bottom:1px solid $gray;
+  z-index:1;
 }
