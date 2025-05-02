@@ -1,0 +1,31 @@
+.hero{
+  position:relative;
+  height:calc(100vh - 60px); width:100%;
+  display:flex;
+  align-items: center;
+  justify-content: flex-end;
+  .wrap{
+
+    h1{
+      width:100%;
+      text-align:right;
+      z-index:1;
+    }
+
+    .sayings{
+      position:relative;
+      height:60px;
+      overflow:hidden;
+
+      span{
+        position:relative;
+        height:56px; width:100%;
+        padding:2px 0px;
+        display:block;
+        font: 900 50px/56px $red_hat;
+        text-align:right;
+        color:$black;
+      }
+    }
+  }
+}

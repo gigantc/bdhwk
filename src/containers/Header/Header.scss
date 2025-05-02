@@ -1,0 +1,21 @@
+
+.header{
+  position:fixed;
+  top:0; left:0;
+  height:60px; width:100%;
+  background-color:$white;
+  color:$black;
+  border-bottom:1px solid $gray;
+  overflow: visible;
+  z-index:9;
+  .wrap{
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: flex-end;
+    .title{
+      font: 850 18px/18px $red_hat;
+      margin-right: auto;
+    }
+  }
+}
