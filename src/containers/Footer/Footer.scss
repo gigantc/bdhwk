@@ -22,7 +22,15 @@
       text-align:left;
       margin:0px 30px 0px 0px;
       font: 400 24px/34px $red_hat;
-      color:$white;
+      a{
+        color:$white;
+        @include trans(0.3s);
+        &:hover{
+          color:$yellow;
+          @include trans(0.3s);
+        }
+      }
+      
     }
   }
 }

@@ -26,6 +26,18 @@ body {
   }
 }
 
+
+//text selection styles
+::selection {
+  background: $yellow;
+  color:$black;
+}
+::-moz-selection {
+  background: $yellow;
+  color:$black;
+}
+
+
 .wrap{
   position:relative;
   width:90%;
