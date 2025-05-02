@@ -1,18 +1,18 @@
 .profile{
-  position:relative;
-  height:100vh; width:100%;
-  background-color:white;
-  color:$black;
-  .wrap{
-    height:100%;
-    display:flex;
-    flex-wrap:wrap;
-    align-items: center;
-    justify-content: center;
-
-    h3{
-      width:85%;
-      text-align:left;
-    }
+  position: relative;
+  height: 100vh;
+  max-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: visible;
+  z-index:1;
+  background-color:$white;
+  h3{
+    position: relative;
+    display: block;
+    width: 70%;
+    color:$black;
+    margin:0px;
   }
 }

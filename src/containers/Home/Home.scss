@@ -3,7 +3,12 @@
   position:relative;
   background-color:white;
   color:$black;
-  padding:60px 0px 50vh 0px;
+  //what's up with this calc??
+  // ok. WorkGallery is 512pm tall right now.
+  // This needs to be set at 512/2 so it goes directly in
+  // the middle of the page.
+  // gotta make this dynamic so we can add more later
+  padding:60px 0px calc(50vh - 256px) 0px;
   margin:0px 0px 70px 0px;
   border-bottom:1px solid $gray;
   z-index:1;
