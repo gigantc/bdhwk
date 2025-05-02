@@ -1,5 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
+
+import Unfiltered from "../../assets/work-unfiltered.jpg"
+import SeaChange from "../../assets/work-sea-change.jpg"
+import NickHelps from "../../assets/work-nick-helps.jpg"
+import BBJ from "../../assets/work-bbj.jpg"
+import Snap from "../../assets/work-snap.jpg"
+
 import './WorkGallery.scss';
 
 
@@ -24,27 +31,27 @@ const WorkGallery = () => {
     { 
       title: "Unfiltered", 
       description: "Scrollytelling Experience",
-      image: "https://placehold.co/1600x1400/red/white"
+      image: Unfiltered
     },
     { 
       title: "Coca-Cola", 
       description: "The First Ever Web-Based Snap Filter",
-      image: "https://placehold.co/1600x1400/blue/white" 
+      image: Snap 
     },
     { 
       title: "Business Jets", 
       description: "Custom Wordpress Site",
-       image: "https://placehold.co/1600x1400/green/white"
+       image: BBJ
     },
     { 
       title: "Paramount", 
       description: "SpongeBob Operation Seachange",
-      image: "https://placehold.co/1600x1400/yellow/white" 
+      image: SeaChange 
     },
     { 
       title: "Nickelodeon", 
       description: "Custom Wordpress Site",
-      image: "https://placehold.co/1600x1400/purple/white" 
+      image: NickHelps 
     },
     { 
       title: "Boeing", 
@@ -64,10 +71,20 @@ const WorkGallery = () => {
       });
 
       requestAnimationFrame(() => {
-        gsap.fromTo(
+        const tl = gsap.timeline();
+      
+        tl.fromTo(
           refMap.current[newKey],
           { scale: 0 },
-          { scale: 1, duration: 0.4, ease: 'power2.out' }
+          { scale: 1, duration: 0.4, ease: 'power2.out' },
+          0
+        );
+      
+        tl.fromTo(
+          refMap.current[newKey],
+          { filter: 'blur(10px)' },
+          { filter: 'blur(0px)', duration: 0.6, ease: 'power2.out' },
+          0
         );
       });
     }
