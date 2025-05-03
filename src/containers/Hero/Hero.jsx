@@ -28,12 +28,13 @@ const Hero = () => {
     { up: "I build for the people who maintain it."},
     { up: "I mentor like someone once did for me."},
     { up: "I bring calm to the war room."},
-    { up: "I protect devs from chaos and bad meetings."},
+    { up: "I protect devs from bad meetings."},
     { up: "I build for startups and scale for enterprises."},
+    { up: "I lead teams that don't fear production."},
     //{ up: "I commit code that ships and scales."},
     //{ up: "I lead engineers, not engineering theater."},
     // { up: "I turn complexity into clarity."},
-    { up: "I lead teams that don't fear production."},
+    
     // { up: "I foster clarity, curiosity, and clean commits."},
     // { up: "I lead with curiosity, ship with precision."},
     { up: ":)"}
@@ -46,11 +47,14 @@ const Hero = () => {
 
     //forward motion
     for (let i = 1; i < totalItems; i++) {
+      //first item gets a little extra time
+      const delay = i === 1 ? 4 : 3;
+
       tl.to(rotateRef.current, {
         y: -60 * i,
         duration: 0.4,
         ease: 'power2.inOut',
-      }, `+=3`);
+           }, `+=${delay}`);
     }
 
     // Backward motion

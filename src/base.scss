@@ -13,18 +13,10 @@ body {
   overflow-x:hidden;
   -webkit-overflow-scrolling: touch;
   margin:0px;
-  background-color:$main;
+  background-color:$white;
 }
 
-// fade in effect on page load
-@keyframes bodyFade {
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-}
+
 
 
 //text selection styles

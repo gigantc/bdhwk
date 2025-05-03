@@ -13,15 +13,15 @@ import './WorkGallery.scss';
 
 const WorkGallery = () => {
 
-
+  //////////////////////////////////////
+  // REFS & STATE
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [renderedImages, setRenderedImages] = useState([]);
-  const zCounter = useRef(1);
-  const prevIndex = useRef(null);
   const refMap = useRef({});
 
   
-
+  //////////////////////////////////////
+  // CARD DATA OBJECT
   const cards = [
     { 
       title: "Boeing", 
@@ -62,6 +62,8 @@ const WorkGallery = () => {
 
 
 
+  //////////////////////////////////////
+  // ANIMATIONS
   useEffect(() => {
     if (hoveredIndex !== null) {
       const newKey = `${hoveredIndex}-${Date.now()}`;
@@ -92,7 +94,8 @@ const WorkGallery = () => {
 
 
 
-
+  //////////////////////////////////////
+  // RENDER
   return (
     <>
       <section className="workGallery">
