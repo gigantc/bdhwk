@@ -6,6 +6,8 @@ import SeaChange from "../../assets/work-sea-change.jpg"
 import NickHelps from "../../assets/work-nick-helps.jpg"
 import BBJ from "../../assets/work-bbj.jpg"
 import Snap from "../../assets/work-snap.jpg"
+import Azure from "../../assets/work-azure-search.jpg"
+import SExp from "../../assets/work-safety-experience.jpg"
 
 import './WorkGallery.scss';
 
@@ -24,9 +26,9 @@ const WorkGallery = () => {
   // CARD DATA OBJECT
   const cards = [
     { 
-      title: "Boeing", 
+      title: "Azure", 
       description: "AI Powered Search Engine",
-      image: "https://placehold.co/1600x1400/orange/white"
+      image: Azure
     },
     { 
       title: "Unfiltered", 
@@ -56,7 +58,7 @@ const WorkGallery = () => {
     { 
       title: "Boeing", 
       description: "The Safety Experience",
-      image: "https://placehold.co/1600x1400/pink/white" 
+      image: SExp 
     }
   ];
 
@@ -99,7 +101,7 @@ const WorkGallery = () => {
   return (
     <>
       <section className="workGallery">
-
+         
           <div className="cards">
             {cards.map((card, index) => (
               <div
