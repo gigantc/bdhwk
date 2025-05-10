@@ -40,7 +40,7 @@ const WorkGallery = () => {
       title: "Unfiltered", 
       description: "Scrollytelling Experience",
       image: Unfiltered,
-      route: "Unfiltered"
+      route: "unfiltered"
     },
     { 
       title: "Coca-Cola", 
