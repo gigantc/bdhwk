@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-
 import { gsap } from 'gsap';
 
 import './Splash.scss';
@@ -15,9 +14,6 @@ const Splash = ({ onComplete, title }) => {
 
   
 
-
-
-
   //////////////////////////////////////
   // ANIMATIONS
   useEffect(() => {
@@ -28,31 +24,54 @@ const Splash = ({ onComplete, title }) => {
     });
 
     //animate in
-    tl.fromTo(
-      splashRef.current,
-      { width: 0, height: 0 },
-      { width: '100vw', height: '100vh', duration: 0.5 }
+    tl.fromTo(splashRef.current,
+      { 
+        width: '100vw', 
+        height: '100vh' 
+      },
+      { 
+        width: 'calc(100vw - 50px)', 
+        height: 'calc(100vh - 50px)', 
+        duration: 0.5,
+        ease: 'power2.out'
+      }
     )
-    .fromTo(
-      titleRef.current,
-      { y: 80, opacity: 0 },
-      { y: 0, opacity: 1, duration: 0.5 }
+    .fromTo(titleRef.current,
+      { 
+        y: 80, 
+      },
+      { 
+        y: 0, 
+        duration: 0.5,
+        ease: 'power2.out',
+      }, "<+=0.2"
     )
+
      // wait 2 seconds
     .to({}, { duration: 2 })
 
     //animate out
-    .to(
-      titleRef.current,
-      { y: -80, opacity: 0, duration: 0.5 }
+    .to(titleRef.current,
+      { 
+        y: -80, 
+        duration: 0.5,
+        ease: 'power2.out'
+      }
     )
-    .to(
-      splashRef.current,
-      { width: '100vw', height: '100vh', duration: 0.5 }
+    .to(splashRef.current,
+      { 
+        width: '100vw', 
+        height: '100vh', 
+        duration: 0.5,
+        ease: 'power2.out',
+      }, "<+=0.1"
     )
-    .to(
-      splashRef.current,
-      { opacity: 0, duration: 0.5 }
+    .to(splashRef.current,
+      { 
+        opacity: 0, 
+        duration: 0.5,
+        ease: 'power2.out',
+      }
     );
 
   }, [])

@@ -1,0 +1,129 @@
+.case-study{
+  position:relative;
+  width:100%; height:auto;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background-color:$black;
+
+
+  .unfiltered, .azure-ai{
+    position:relative;
+    width:100%; height:auto;
+    min-height:100vh;
+    padding:100px 0px 0px 0px;
+    background-color:$white;
+
+    .title{
+      margin:0px 0px 70px 0px;
+      h1{
+        text-align:center;
+        font: 900 70px/76px $red_hat;
+      }
+      h3{
+        text-align:center;
+      }
+    }
+
+    .image{
+      position:relative;
+      width:100%; height:587px;
+      border-radius:25px;
+      overflow:hidden;
+      margin:0px 0px 70px 0px;
+      img{
+        height:100%; width:100%;
+        object-fit:cover;
+      }
+    }
+
+
+    .body{
+      display:flex;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap:150px;
+      .info{
+        width:40%;
+        .box{
+          border-top:2px solid $black;
+          border-bottom:2px solid $black;
+          padding:20px 0px;
+          p{
+            font: 400 16px/24px $red_hat;
+            margin:0px;
+            width:100%;
+            display:flex;
+            span{
+              font: 700 16px/24px $red_hat;
+              margin:0px 15px 0px 0px;
+            }
+          }
+        }
+        a{
+          position:relative;
+          display:block;
+          margin:20px 0px 0px 6px;
+          font: 400 16px/20px $red_hat;
+          height:20px;
+          @include trans(0.3s);
+          svg{
+            height:100%;
+            transform:translate(-6px, 5px);
+          }
+        }
+      }
+
+      .writeup{
+        width:calc(60% - 150px);
+        margin:0px 0px 150px 0px;
+        h2{
+          margin:0px 0px 20px 0px;
+          font: 900 40px/46px $red_hat;
+        }
+        p{font: 400 16px/22px $roboto;}
+      }
+    }
+
+
+
+
+    .gallery{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 50px 20px;
+      margin:0px 0px 150px 0px;
+      .card{
+        position:relative;
+        padding: 38px;
+        width:calc(50% - 90px);
+        border: 2px solid $white;
+        border-radius:32px;
+        img{
+          width:100%;
+          object-fit:cover;
+          border-radius:32px;
+        }
+        &:nth-child(3n + 1){
+          width:100%;
+          background-color:transparent;
+          border: 2px solid $black;
+        }
+      }
+    }
+
+    
+    
+
+
+  }
+
+
+
+}
+
+
+
+
+
