@@ -6,14 +6,16 @@
   align-items:center;
   justify-content:center;
   background-color:$black;
-
+  z-index:1;
 
   .case-study-layout{
     position:relative;
     width:100%; height:auto;
     min-height:100vh;
     padding:100px 0px 0px 0px;
+    margin:0px 0px 70px 0px;
     background-color:$white;
+    z-index:1;
 
     .title{
       margin:0px 0px 70px 0px;

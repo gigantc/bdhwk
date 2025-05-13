@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
-
+import Footer from '../../containers/Footer/Footer.jsx';
 import LinkIcon from '../../assets/link-arrow-up.svg?react';
 import './CaseStudy.scss';
 
@@ -82,6 +82,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
   //////////////////////////////////////
   // RENDER
   return (
+    <>
     <div className="case-study-layout">
       <div className="wrap">
 
@@ -138,6 +139,8 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
         
       </div>
     </div>
+    <Footer />
+    </>
   );
 };
 
