@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 
-import './WorkGallery.scss';
 import { gsap } from 'gsap';
 
 import Unfiltered from "../../assets/work-unfiltered.jpg"

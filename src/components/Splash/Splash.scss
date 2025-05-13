@@ -1,0 +1,69 @@
+.workGallery{
+  position:relative;
+  width:100%; height:auto;
+  display:flex;
+  flex-wrap:wrap;
+  background-color:$white;
+
+  .cards{
+    position:relative;
+    width:50%;
+    .card{
+      position:relative;
+      height:72px; width:100%;
+      border-top:1px solid $gray;
+      overflow:hidden;
+      cursor:pointer;
+      @include trans(0.4 s);
+      &:hover{
+        span{transform: translateY(-72px);}
+      }
+      &:last-of-type{
+        border-bottom:1px solid $gray;
+      }
+      span{
+        height:72px; width:100%;
+        background:$white;
+        display:block;
+        transform: translateY(0px);
+        @include trans(0.3s);
+        &:last-of-type{
+          background:$black;
+        }
+      }
+      h2{
+        height:72px; width:100%;
+        color:$black;
+        margin:0px 0px 0px 30px;
+        text-transform:uppercase;
+        font: 900 50px/72px $red_hat;
+      }
+      p{
+        height:72px; width:100%;
+        color:$white;
+        margin:0px 0px 0px 30px;
+        font: 900 25px/72px $roboto;
+        text-transform:uppercase;
+      }
+    }
+  }
+
+  .images{
+    position:relative;
+    width:50%;
+    border-top:1px solid $gray;
+    border-bottom:1px solid $gray;
+    overflow:hidden;
+    background-color:$gray;
+    img{
+      position:absolute;
+      top:0px; left:0px;
+      width:100%; height:100%;
+      object-fit:cover;
+    }
+  }
+}
+
+
+
+

@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate, useNavigationType, useLocation } from 'react-router-dom';
-import { gsap } from 'gsap';
+import Splash from '../../components/Splash/Splash.jsx';
 
 import './Unfiltered.scss';
 
@@ -22,95 +22,7 @@ const Unfiltered = () => {
   //////////////////////////////////////
   // REFS & STATE
   const [showSplash, setShowSplash] = useState(true);
-  const SplashRef = useRef(null);
-  const TitleRef = useRef(null);
   const UnfilteredRef = useRef(null);
-
-
-  //////////////////////////////////////
-  // ANIMATIONS
-  useEffect(() => {
-
-    const splash = SplashRef.current;
-    const title = TitleRef.current;
-
-    const tl = gsap.timeline({ onComplete: () => setShowSplash(false) });
-
-    if (splash) {
-
-        //border animation
-        tl.fromTo(splash, {
-          width: '100vw',
-          height: '100vh',
-        }, {
-          width: 'calc(100vw - 50px)',
-          height: 'calc(100vh - 50px)',
-          duration: 0.5,
-          ease: 'power2.out',
-        });
-
-        //text animation
-        tl.fromTo(title, {
-          transform: 'translateY(80px)'
-        }, {
-          transform: 'translateY(0px)',
-          duration: 0.5,
-          delay: 0.2,
-          ease: 'power2.out',
-        }, "<");
-
-        //pause
-        tl.to({}, { duration: 2 });
-        
-        //animate out
-        tl.to(title, {
-          transform: 'translateY(-80px)',
-          duration: 0.5,
-          ease: 'power2.out',
-        });
-
-        tl.to(splash, {
-          width: '100vw',
-          height: '100vh',
-          duration: 1,
-          delay: 0.2,
-          ease: 'power2.out'
-        }, "<");
-
-        tl.to(splash, {
-          opacity: 0,
-          duration: 1,
-          ease: 'power2.out',
-        });
-
-    }
-
-  }, [])
-
-
-
-
-  // Animate .unfiltered when splash is gone
-  useEffect(() => {
-    if (!showSplash && UnfilteredRef.current) {
-      gsap.fromTo(
-        UnfilteredRef.current,
-        {
-          opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power2.out'
-        }
-      );
-    }
-  }, [showSplash]);
-
-  
-
 
 
   //////////////////////////////////////
@@ -119,17 +31,14 @@ const Unfiltered = () => {
     <section className="case-study">
 
       {showSplash && (
-        <div className="splash-screen" ref={SplashRef}>
-          <div className="intro-text">
-            <span>
-              <h1 ref={TitleRef}>Unfiltered</h1>
-            </span>
-          </div>
-        </div>
+        <Splash 
+        onComplete={() => setShowSplash(false)} 
+        title="Unfiltered" 
+        />
       )}
 
       {!showSplash && (
-        <section className="unfiltered" ref={UnfilteredRef}>
+        <div className="unfiltered" ref={UnfilteredRef}>
           <div className="wrap">
 
             <div className="title">
@@ -138,7 +47,7 @@ const Unfiltered = () => {
             </div>
 
             <div className="image">
-              <img src={Hero}npm  alt="Unfiltered Hero Screenshot" />
+              <img src={Hero} alt="Unfiltered Hero Screenshot" />
             </div>
             
 
@@ -178,7 +87,6 @@ const Unfiltered = () => {
 
 
 
-
             <div className="gallery">
               <div className="card">
                 <img src={Gallery1} alt="" />
@@ -206,9 +114,8 @@ const Unfiltered = () => {
             
 
             
-            
           </div>
-        </section>
+        </div>
       )}
     </section>
   );
