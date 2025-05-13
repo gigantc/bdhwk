@@ -5,12 +5,28 @@ import './Footer.scss';
 const Footer = () => {
   
   
+  const footerRef = useRef(null);
+  
+   //fade in animation
+  useEffect(() => {
+        const tl = gsap.timeline();
+          tl.fromTo(
+            footerRef.current,
+            { opacity: 0 },
+            {
+              opacity: 1,
+              duration: 0.5,
+              ease: 'power2.out'
+            },
+            ">0.8"
+          );
 
+    }, [])
 
 
   return (
     <>
-      <footer className="theEnd">
+      <footer className="theEnd" ref={footerRef}>
         <ul>
           <li><h2>Say hello.</h2></li>
           <li><a href="mailto:dan@badhawkworkshop.com">Email</a></li>

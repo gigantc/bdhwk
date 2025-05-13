@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useLocationContext } from '../../context/LocationContext.jsx';
 import { Link } from 'react-router-dom';
 
 import { gsap } from 'gsap';
@@ -23,7 +23,6 @@ const WorkGallery = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
   const [renderedImages, setRenderedImages] = useState([])
   const refMap = useRef({})
-  const navigate = useNavigate()
 
   
   //////////////////////////////////////
@@ -74,6 +73,25 @@ const WorkGallery = () => {
   ];
 
 
+  //////////////////////////////////////
+  // SCROLL TO WORK
+  const { previousLocation } = useLocationContext();
+  // if this isn't home (so it's coming from a case study) then let's go directly to the WorkGallery
+  useEffect(() => {
+  if (previousLocation?.pathname && previousLocation.pathname !== '/') {
+    const element = document.getElementById('workGallery');
+    if (element) {
+      setTimeout(() => {
+        const yOffset = -100;
+        const y = element.getBoundingClientRect().top + window.scrollY + yOffset;
+        window.scrollTo({ top: y, behavior: 'auto' });
+        // give the page 100ms to finish layout
+      }, 100); 
+    }
+  }
+}, [previousLocation]);
+
+
 
   //////////////////////////////////////
   // ANIMATIONS
@@ -107,11 +125,12 @@ const WorkGallery = () => {
 
 
 
+
   //////////////////////////////////////
   // RENDER
   return (
     <>
-      <section className="workGallery">
+      <section className="workGallery" id="workGallery">
          
           <div className="cards">
             {cards.map((card, index) => (
@@ -119,6 +138,7 @@ const WorkGallery = () => {
               <Link 
               to={card.route}
               key={index}
+              state={{ from: '/#workGallery' }}
               >
               <div
                 className="card"

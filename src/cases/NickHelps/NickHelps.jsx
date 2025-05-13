@@ -11,9 +11,6 @@ import Gallery1 from './assets/gallery-wide.jpg'
 import Gallery2 from './assets/gallery-square.jpg'
 import Gallery3 from './assets/gallery-square-2.jpg'
 import Gallery4 from './assets/gallery-wide-2.jpg'
-// import Gallery5 from './assets/gallery-ai.jpg'
-// import Gallery6 from './assets/gallery-chair.jpg'
-// import Gallery7 from './assets/gallery-exhibit.jpg'
 
 
 
@@ -42,7 +39,7 @@ const NickHelps = () => {
   //////////////////////////////////////
   // RENDER
   return (
-    <section className="case-study">
+    <section className="case-study nick-helps">
 
       {showSplash && (
         <Splash 

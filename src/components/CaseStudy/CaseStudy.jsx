@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 
+
 import LinkIcon from '../../assets/link-arrow-up.svg?react';
 import './CaseStudy.scss';
 
@@ -8,8 +9,8 @@ import './CaseStudy.scss';
 
 const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}) => {
 
-  //////////////////////////////////////
-  // REFS & STATE
+//////////////////////////////////////
+// REFS & STATE
  const titleRef = useRef(null);
  const heroRef = useRef(null);
  const bodyRef = useRef(null);
@@ -17,8 +18,8 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
 
   
 
-  //////////////////////////////////////
-  // ANIMATIONS
+//////////////////////////////////////
+// ANIMATIONS
  useEffect(() => {
     gsap.fromTo(titleRef.current,
       { 
