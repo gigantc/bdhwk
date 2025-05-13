@@ -6,11 +6,11 @@ import CaseStudy from "../../components/CaseStudy/CaseStudy.jsx"
 import './NickHelps.scss';
 
 
-// import Hero from './assets/hero.jpg'
-// import Gallery1 from './assets/gallery-table.jpg'
-// import Gallery2 from './assets/gallery-frame.jpg'
-// import Gallery3 from './assets/gallery-frame-2.jpg'
-// import Gallery4 from './assets/gallery-timeline.jpg'
+import Hero from './assets/hero.jpg'
+import Gallery1 from './assets/gallery-wide.jpg'
+import Gallery2 from './assets/gallery-square.jpg'
+import Gallery3 from './assets/gallery-square-2.jpg'
+import Gallery4 from './assets/gallery-wide-2.jpg'
 // import Gallery5 from './assets/gallery-ai.jpg'
 // import Gallery6 from './assets/gallery-chair.jpg'
 // import Gallery7 from './assets/gallery-exhibit.jpg'
@@ -56,18 +56,18 @@ const NickHelps = () => {
         <CaseStudy
           title="Nick Helps"
           subtitle="Wordpress Theme"
-          // hero={Hero}
+          hero={Hero}
           heading={heading}
           writeup={[ ...paragraphs ]}
           info={{
-            year: "2024",
+            years: "2023-2025",
             client: "Nickelodeon",
-            design: "Ryan Lord",
-            timeline: "6 Months",
+            design: "Dan Freeman, Ryan Lord",
+            "Dev Phases": "8",
             stack: "PHP, Sass, Wordpress, Javascript",
           }}
           url="https://nickhelps.com/"
-          // gallery={[Gallery1, Gallery2, Gallery3, Gallery7, Gallery5, Gallery6, Gallery4]}
+          gallery={[Gallery1, Gallery2, Gallery3, Gallery4]}
         />
         
       )}

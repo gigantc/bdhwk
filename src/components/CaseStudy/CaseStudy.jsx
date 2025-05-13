@@ -81,7 +81,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
   //////////////////////////////////////
   // RENDER
   return (
-    <div className="unfiltered">
+    <div className="case-study-layout">
       <div className="wrap">
 
 
