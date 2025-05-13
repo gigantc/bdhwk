@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import './PAsswordGate.scss';
+import { collection, addDoc } from 'firebase/firestore';
+import { db } from '../../firebaseConfig.js';
+import './PasswordGate.scss';
 
 const PasswordGate = ({ onAuth }) => {
 
@@ -12,11 +14,19 @@ const PasswordGate = ({ onAuth }) => {
     carr0t: 'Creator',
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (approvedPasswords.hasOwnProperty(input)) {
+      const label = approvedPasswords[input];
+
       localStorage.setItem('authenticated', 'true');
-      localStorage.setItem('authLabel', approvedPasswords[input]);
+      localStorage.setItem('authLabel', label);
+
+      await addDoc(collection(db, 'visitors'), {
+        name: label,
+        timestamp: new Date().toISOString(),
+      });
+
       onAuth();
     } else {
       setShowError(true);
