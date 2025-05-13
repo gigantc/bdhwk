@@ -11,11 +11,12 @@ import SeaChange from '../../cases/SeaChange/SeaChange.jsx';
 import Snap from '../../cases/Snap/Snap.jsx';
 import Unfiltered from '../../cases/Unfiltered/Unfiltered.jsx';
 
+
+import PasswordGate from '../PasswordGate/PasswordGate.jsx';
 import './App.scss';
 
 
 //setting up all the routes
-//
 const AppRoutes = ({ setPreviousLocation, setCurrentLocation }) => {
   const location = useLocation();
   const previousRef = useRef(null);
@@ -41,11 +42,33 @@ const AppRoutes = ({ setPreviousLocation, setCurrentLocation }) => {
 };
 
 
-//
+// bringing routes and using context to make sure we have the previous location. This is used for back button animations
 const App = () => {
   const [previousLocation, setPreviousLocation] = useState(null);
   const [currentLocation, setCurrentLocation] = useState(null);
 
+  //fake password check
+  const [passwordInput, setPasswordInput] = useState('');
+  const [authenticated, setAuthenticated] = useState(() => {
+    return localStorage.getItem('authenticated') === 'true';
+  });
+
+    const handlePasswordSubmit = (e) => {
+    e.preventDefault();
+    if (passwordInput === 'friend') {
+      setAuthenticated(true);
+      localStorage.setItem('authenticated', 'true');
+    } else {
+      alert('Incorrect password. Please try again.');
+      setPasswordInput('');
+    }
+  };
+
+
+  if (!authenticated) {
+    return <PasswordGate onAuth={() => setAuthenticated(true)} />;
+  }
+  
   return (
     <Router>
       <LocationContext.Provider value={{ previousLocation, currentLocation }}>

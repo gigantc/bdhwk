@@ -10,7 +10,7 @@ const Header = () => {
   //////////////////////////////////////
   //////////////////////////////////////
   // GREETING
-  
+  const who = localStorage.getItem('authLabel');
 
 
 
@@ -21,7 +21,7 @@ const Header = () => {
       <header className="header">
         <div className="wrap">
           <div className="title">BDHWK</div>
-          <div className="welcome">Welcome friend.</div>
+          <div className="welcome">Welcome {who}.</div>
         </div>
       </header>
     </>
