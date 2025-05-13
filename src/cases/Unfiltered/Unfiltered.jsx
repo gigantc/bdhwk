@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { useNavigate, useNavigationType, useLocation } from 'react-router-dom';
+import React, { useState } from 'react';
 
 import Splash from '../../components/Splash/Splash.jsx';
 import CaseStudy from "../../components/CaseStudy/CaseStudy.jsx"
@@ -26,6 +25,8 @@ const Unfiltered = () => {
   const [showSplash, setShowSplash] = useState(true);
 
 
+  //////////////////////////////////////
+  // CONTENT
   const heading = "Dismantling a system purposefully built on smoke and mirrors.";
 
   const paragraphs = [
@@ -33,13 +34,13 @@ const Unfiltered = () => {
       The State of Utah tasked R&R Partners with creating a temporary art installation to expose Big Tobacco's legacy of manipulative, targeted advertising. The result was a visceral, immersive exhibit called “Unfiltered." It was a huge success. It confronted visitors with walls of original ads, old magazine spreads, and TV commercials that showcased the industry's aggressive tactics in communities of color.
     </>,
     <>
-      <strong>But once the installation came down, we didn't want the message to disappear with it.</strong>
+      <strong>But once the installation came down, we didn't want the message to disappear.</strong>
     </>,
     <>
       With no budget and a tight window, we set out to reimagine the installation digitally. The concept was simple, recreate the sensory overload of the original installation through a "scrollytelling" experience. Users are pulled through a hijacked scroll narrative that mimics the exhibit's multi-room experience.
     </>,
     <>
-      The build was quick. <strong>Just eight days of development.</strong> I had to prioritize ruthlessly, move fast, and manage a ton of stress. There were many compromises, but the end result still punches above its weight as a standalone digital experience.
+      The build was quick. <strong>Just eight days marked for development.</strong> I had to prioritize ruthlessly, move fast, and manage a ton of stress. There were many compromises, but the end result still punches above its weight as a standalone digital experience.
     </>,
     <>
       Unfiltered now lives on as a digital story that doesn't just preserve the exhibit, it reframes it. Even with zero budget the site captures the spirit of the original and extends its reach far beyond gallery walls.
@@ -75,8 +76,8 @@ const Unfiltered = () => {
             client: "The State of Utah",
             design: "Destin Cox, Ryan Lord",
             timeline: "less than 2 weeks (8 dev days)",
-            budget: "$0.00",
             stack: "Vite/React, GSAP, Sass, Three.js",
+            budget: "$0.00",
           }}
           url="https://theunfilteredstory.org"
           gallery={[Gallery1, Gallery2, Gallery3, Gallery7, Gallery5, Gallery6, Gallery4]}

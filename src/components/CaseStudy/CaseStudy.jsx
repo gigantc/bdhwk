@@ -91,10 +91,11 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
         </div>
 
 
-
+        {hero && (
         <div className="image" ref={heroRef}>
           <img src={hero} alt="" />
         </div>
+        )}
 
 
         
@@ -124,7 +125,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
         </div>
 
 
-        
+        {gallery && (
         <div className="gallery" ref={galleryRef}>
           {gallery.map((image, i) => (
             <div className="card" key={i}>
@@ -132,6 +133,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
             </div>
           ))}
         </div>
+        )}
         
       </div>
     </div>

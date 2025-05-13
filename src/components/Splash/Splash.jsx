@@ -32,7 +32,7 @@ const Splash = ({ onComplete, title }) => {
       { 
         width: 'calc(100vw - 50px)', 
         height: 'calc(100vh - 50px)', 
-        duration: 0.5,
+        duration: 0.8,
         ease: 'power2.out'
       }
     )
@@ -42,9 +42,9 @@ const Splash = ({ onComplete, title }) => {
       },
       { 
         y: 0, 
-        duration: 0.5,
+        duration: 0.8,
         ease: 'power2.out',
-      }, "<+=0.2"
+      }, "<"
     )
 
      // wait 2 seconds
@@ -64,7 +64,7 @@ const Splash = ({ onComplete, title }) => {
         height: '100vh', 
         duration: 0.5,
         ease: 'power2.out',
-      }, "<+=0.1"
+      }, "<"
     );
 
 

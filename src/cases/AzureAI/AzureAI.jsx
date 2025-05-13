@@ -1,19 +1,42 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
+
 import Splash from '../../components/Splash/Splash.jsx';
-import { gsap } from 'gsap';
+import CaseStudy from "../../components/CaseStudy/CaseStudy.jsx"
 
 import './AzureAI.scss';
+
+
+// import Hero from './assets/hero.jpg'
+// import Gallery1 from './assets/gallery-table.jpg'
+// import Gallery2 from './assets/gallery-frame.jpg'
+// import Gallery3 from './assets/gallery-frame-2.jpg'
+// import Gallery4 from './assets/gallery-timeline.jpg'
+// import Gallery5 from './assets/gallery-ai.jpg'
+// import Gallery6 from './assets/gallery-chair.jpg'
+// import Gallery7 from './assets/gallery-exhibit.jpg'
 
 
 
 const AzureAI = () => {
 
- //////////////////////////////////////
+
+  //////////////////////////////////////
   // REFS & STATE
   const [showSplash, setShowSplash] = useState(true);
-  const AzureAIdRef = useRef(null);
 
 
+  //////////////////////////////////////
+  // CONTENT
+  const heading = "Search. You know...it's so easy.";
+
+  const paragraphs = [
+    <>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </>,
+    <>
+      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+    </>
+  ];
 
 
   //////////////////////////////////////
@@ -29,84 +52,24 @@ const AzureAI = () => {
       )}
 
       {!showSplash && (
-        <div className="azure-ai" ref={AzureAIdRef}>
-          <div className="wrap">
 
-            <div className="title">
-              <h1>Azure AI Search</h1>
-              <h3>An AI based search Engine</h3>
-            </div>
-
-            {/* <div className="image">
-              <img src={Hero} alt="Unfiltered Hero Screenshot" />
-            </div> */}
-            
-
-            {/* <div className="body">
-              
-              <div className="writeup">
-                <h2>Dismantling a system purposefully built on smoke and mirrors.</h2>
-
-                <p>The State of Utah tasked R&R Partners with creating a temporary art installation to expose Big Tobacco's legacy of manipulative, targeted advertising. The result was a visceral, immersive exhibit called “Unfiltered." It was a huge success. It confronted visitors with walls of original ads, old magazine spreads, and TV commercials that showcased the industry's aggressive tactics in communities of color.</p>
-
-                <p><strong>But once the installation came down, we didn't want the message to disappear with it.</strong></p>
-
-                <p>With no budget and a tight window, we set out to reimagine the installation digitally. The concept was simple, recreate the sensory overload of the original installation through a "scrollytelling" experience. Users are pulled through a hijacked scroll narrative that mimics the exhibit's multi-room experience.</p>
-
-                <p>The build was quick. <strong>Just eight days of development.</strong> I had to prioritize ruthlessly, move fast, and manage a ton of stress. There were many compromises, but the end result still punches above its weight as a standalone digital experience.</p>
-
-                <p>Unfiltered now lives on as a digital story that doesn't just preserve the exhibit, it reframes it. Even with zero budget the site captures the spirit of the original and extends its reach far beyond gallery walls.</p>
-
-                <p>This one was so much fun to build, and I'm proud of what came together in such a short time.</p>
-
-              </div>
-
-              <div className="info">
-                <div className="box">
-                  <p><span>Year:</span> 2025</p>
-                  <p><span>Client:</span>The State of Utah</p>
-                  <p><span>Design:</span>Destin Cox, Ryan Lord</p>
-                  <p><span>Timeline:</span>less than 2 weeks (8 dev days)</p>
-                  <p><span>Budget:</span>$0.00</p>
-                  <p><span>Stack:</span>Vite/React, GSAP, Sass, Three.js</p>
-                </div>
-
-                <a href="https://theunfilteredstory.org" target="_blank"><LinkIcon /> View Live Site</a>
-              </div>
-
-            </div>
-
-
-
-            <div className="gallery">
-              <div className="card">
-                <img src={Gallery1} alt="" />
-              </div>
-              <div className="card">
-                <img src={Gallery2} alt="" />
-              </div>
-              <div className="card">
-                <img src={Gallery3} alt="" />
-              </div>
-              <div className="card">
-                <img src={Gallery7} alt="" />
-              </div>
-               <div className="card">
-                <img src={Gallery5} alt="" />
-              </div>
-               <div className="card">
-                <img src={Gallery6} alt="" />
-              </div>
-               <div className="card">
-                <img src={Gallery4} alt="" />
-              </div>
-            </div>
-            
-            
-              */}
-            
-          </div>
-        </div>
+        <CaseStudy
+          title="Azure AI Search"
+          subtitle="A Custom Search Engine that leverages AI"
+          // hero={Hero}
+          heading={heading}
+          writeup={[ ...paragraphs ]}
+          info={{
+            year: "2025",
+            client: "Boeing",
+            design: "Ryan Lord, Maribel Barba",
+            timeline: "4 months",
+            stack: "Node.js, Vite/React, Azure AI, SQL, Britecove",
+          }}
+          // url="https://theunfilteredstory.org"
+          // gallery={[Gallery1, Gallery2, Gallery3, Gallery7, Gallery5, Gallery6, Gallery4]}
+        />
+        
       )}
     </section>
   );
