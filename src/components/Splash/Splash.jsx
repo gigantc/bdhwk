@@ -65,14 +65,8 @@ const Splash = ({ onComplete, title }) => {
         duration: 0.5,
         ease: 'power2.out',
       }, "<+=0.1"
-    )
-    .to(splashRef.current,
-      { 
-        opacity: 0, 
-        duration: 0.5,
-        ease: 'power2.out',
-      }
     );
+
 
   }, [])
 
