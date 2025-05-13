@@ -16,7 +16,8 @@
       position:relative;
       height:60px;
       overflow:hidden;
-
+      @include breakpoint(1200px){height:50px;}
+      @include breakpoint(720px){height:40px;}
       span{
         position:relative;
         height:56px; width:100%;
@@ -25,6 +26,14 @@
         font: 900 50px/56px $red_hat;
         text-align:right;
         color:$black;
+        @include breakpoint(1200px){
+          font: 900 30px/40px $red_hat;
+          height:46px;
+        }
+        @include breakpoint(720px){
+          font: 900 25px/30px $red_hat;
+          height:36px;
+        }
       }
     }
   }
