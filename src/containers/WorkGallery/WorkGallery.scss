@@ -46,6 +46,7 @@
         margin:0px 0px 0px 30px;
         font: 900 25px/72px $roboto;
         text-transform:uppercase;
+        @include breakpoint(960px){font: 900 16px/72px $roboto;}
       }
     }
   }
