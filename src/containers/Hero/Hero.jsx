@@ -44,13 +44,6 @@ const Hero = () => {
     //let's set our breakpoints sizes
     const getLineHeight = () => {
       const width = window.innerWidth;
-      // if (width < 720) {
-      //   return 40;
-      // } else if (width < 1200) {
-      //   return 50;
-      // } else {
-      //   return 60;
-      // }
       if (width > 1200) {
         return 60;
       } else if (width > 720) {

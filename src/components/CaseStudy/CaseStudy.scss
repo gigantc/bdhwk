@@ -22,6 +22,11 @@
       h1{
         text-align:center;
         font: 900 70px/76px $red_hat;
+        @include breakpoint(920px){font: 900 50px/56px $red_hat;}
+        @include breakpoint(680px){
+          font: 900 35px/35px $red_hat;
+          margin:0px 0px 10px 0px;
+        }
       }
       h3{
         text-align:center;
@@ -34,6 +39,8 @@
       border-radius:25px;
       overflow:hidden;
       margin:0px 0px 70px 0px;
+      @include breakpoint(900px){height:387px;}
+      @include breakpoint(500px){height:287px;}
       img{
         height:100%; width:100%;
         object-fit:cover;
@@ -46,8 +53,13 @@
       align-items: flex-start;
       flex-wrap: wrap;
       gap:150px;
+      @include breakpoint(1024px){gap:0px;}
       .info{
         width:40%;
+        @include breakpoint(1024px){
+          width:100%;
+          margin:0px 0px 70px 0px;
+        }
         .box{
           // border-top:2px solid $black;
           border-bottom:2px solid $black;
@@ -80,9 +92,14 @@
       .writeup{
         width:calc(60% - 150px);
         margin:0px 0px 150px 0px;
+        @include breakpoint(1024px){
+          width:100%;
+          margin:0px 0px 50px 0px;
+        }
         h2{
           margin:0px 0px 20px 0px;
           font: 900 40px/46px $red_hat;
+          @include breakpoint(680px){font: 900 28px/34px $red_hat;}
         }
         p{font: 400 16px/22px $roboto;}
       }
@@ -96,12 +113,14 @@
       flex-wrap:wrap;
       gap: 50px 20px;
       margin:0px 0px 150px 0px;
+      @include breakpoint(900px){gap: 0px;}
       .card{
         position:relative;
         padding: 38px;
-        width:calc(50% - 90px);
-        // border: 2px solid $white;
+        width:calc(50% - 40px);
         border-radius:32px;
+        @include breakpoint(900px){padding: 20px;}
+        @include breakpoint(500px){ width:calc(100% - 40px);}
         img{
           width:100%;
           object-fit:cover;
@@ -110,7 +129,6 @@
         &:nth-child(3n + 1){
           width:100%;
           background-color:transparent;
-          // border: 2px solid $black;
         }
       }
     }

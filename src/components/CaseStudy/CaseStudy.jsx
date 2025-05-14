@@ -16,6 +16,20 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
  const bodyRef = useRef(null);
  const galleryRef = useRef(null);
 
+
+
+ const getImageHeight = () => {
+  const width = window.innerWidth;
+  if (width > 900) {
+    return 587;
+  } else if (width > 500) {
+    return 387;
+  } else if (width > 400) {
+    return 287;
+  } else {
+    return 200;
+  }
+};
   
 
 //////////////////////////////////////
@@ -34,6 +48,9 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
       }
     )
 
+    
+    const imgsize = getImageHeight();
+
     gsap.fromTo(heroRef.current,
       { 
         y: 80, 
@@ -42,7 +59,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
       },
       { 
         y: 0, 
-        height:'587px',
+        height: imgsize,
         opacity: 1, 
         duration: 0.5,
         ease: 'power2.out'
