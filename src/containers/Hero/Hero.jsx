@@ -85,7 +85,7 @@ const Hero = () => {
     <>
       <section className="hero">
         <div className="wrap">
-          <h1>Hello.<br />I'm Dan Freeman.</h1>
+          <h1>Hello. <br />I'm Dan Freeman.</h1>
           <div className="sayings">
             <div className="words" ref={rotateRef}>
               {words.map((word, index) => (

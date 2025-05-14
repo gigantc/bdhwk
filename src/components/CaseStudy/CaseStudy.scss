@@ -117,10 +117,13 @@
       .card{
         position:relative;
         padding: 38px;
-        width:calc(50% - 40px);
+        width:calc(50% - 90px);
         border-radius:32px;
-        @include breakpoint(900px){padding: 20px;}
-        @include breakpoint(500px){ width:calc(100% - 40px);}
+        @include breakpoint(900px){
+          padding: 20px; 
+          width:calc(50% - 40px);
+        }
+        @include breakpoint(500px){width:calc(100% - 40px);}
         img{
           width:100%;
           object-fit:cover;

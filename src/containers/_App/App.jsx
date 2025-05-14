@@ -2,6 +2,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { LocationContext } from '../../context/LocationContext.jsx';
 import { useEffect, useRef, useState } from 'react';
 
+import Cursor from '../../components/Cursor/Cursor.jsx';
+
 import Home from '../../containers/Home/Home.jsx';
 import AzureAI from '../../cases/AzureAI/AzureAI.jsx';
 import BBJ from '../../cases/BBJ/BBJ.jsx';
@@ -47,6 +49,8 @@ const App = () => {
   const [previousLocation, setPreviousLocation] = useState(null);
   const [currentLocation, setCurrentLocation] = useState(null);
 
+  const [showCursor, setShowCursor] = useState(false);
+
   //fake password check
   const [passwordInput, setPasswordInput] = useState('');
   const [authenticated, setAuthenticated] = useState(() => {
@@ -65,19 +69,32 @@ const App = () => {
   };
 
 
+  // mouse detection for the special cursor
+  // Detect if the device has a mouse or is a touch screen
+  useEffect(() => {
+    const hasMouse = window.matchMedia('(pointer: fine) and (hover: hover)').matches;
+    setShowCursor(hasMouse);
+  }, []);
+
+
   if (!authenticated) {
     return <PasswordGate onAuth={() => setAuthenticated(true)} />;
   }
   
   return (
-    <Router>
-      <LocationContext.Provider value={{ previousLocation, currentLocation }}>
-        <AppRoutes 
-          setPreviousLocation={setPreviousLocation}
-          setCurrentLocation={setCurrentLocation}
-        />
-      </LocationContext.Provider>
-    </Router>
+    <>
+      <Router>
+        <LocationContext.Provider value={{ previousLocation, currentLocation }}>
+          <AppRoutes 
+            setPreviousLocation={setPreviousLocation}
+            setCurrentLocation={setCurrentLocation}
+          />
+        </LocationContext.Provider>
+      </Router>
+
+      {/* Only include Cursor if device has a mouse */}
+      {showCursor && <Cursor />}
+    </>
   );
 };
 

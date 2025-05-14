@@ -28,12 +28,21 @@ const Footer = () => {
     <>
       <footer className="theEnd" ref={footerRef}>
         <ul>
-          <li><h2>Say hello.</h2></li>
-          <li><a href="mailto:dan@badhawkworkshop.com">Email</a></li>
-          <li><a href="https://www.linkedin.com/in/dfree/">LinkedIn</a></li>
-          <li><a href="https://github.com/gigantc">GitHub</a></li>
-         
-          <li><a href="tel:4808615448">Phone</a></li>
+          <li>
+            <h2>Say hello.</h2>
+          </li>
+          <li className="cursorHover">
+            <a href="mailto:dan@badhawkworkshop.com">Email</a>
+          </li>
+          <li className="cursorHover">
+            <a href="https://www.linkedin.com/in/dfree/">LinkedIn</a>
+          </li>
+          <li className="cursorHover">
+            <a href="https://github.com/gigantc">GitHub</a>
+          </li>
+          <li className="cursorHover">
+            <a href="tel:4808615448">Phone</a>
+          </li>
         </ul>
 
         </footer>

@@ -34,7 +34,7 @@
         color:$white;
         @include trans(0.3s);
         &:hover{
-          color:$yellow;
+          color:$color;
           @include trans(0.3s);
         }
       }
