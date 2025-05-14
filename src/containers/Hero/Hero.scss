@@ -10,6 +10,10 @@
       width:100%;
       text-align:right;
       z-index:1;
+      br{
+        display:none;
+        @include breakpoint(620px){display:block;}
+      }
     }
 
     .sayings{
@@ -18,7 +22,8 @@
       overflow:hidden;
       @include breakpoint(1200px){height:50px;}
       @include breakpoint(720px){height:40px;}
-      span{
+      @include breakpoint(600px){height:84px;}
+      .word{
         position:relative;
         height:56px; width:100%;
         padding:2px 0px;
@@ -33,6 +38,10 @@
         @include breakpoint(720px){
           font: 900 25px/30px $red_hat;
           height:36px;
+        }
+        @include breakpoint(600px){
+          height:84px;
+          font: 900 20px/24px $red_hat;
         }
       }
     }

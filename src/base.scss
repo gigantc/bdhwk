@@ -45,6 +45,7 @@ h1 {
   font: 900 50px/56px $red_hat;
   margin:0px;
   color:$black;
+  @include breakpoint(500px){font: 900 35px/35px $red_hat;}
 }
 
 h2{
