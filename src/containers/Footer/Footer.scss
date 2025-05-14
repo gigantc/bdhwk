@@ -26,7 +26,7 @@
         font: 400 16px/20px $red_hat;
         margin:0px 15px 0px 0px;
       }
-      @include breakpoint(400px){
+      @include breakpoint(500px){
         font: 400 14px/18px $red_hat;
         margin:0px 10px 0px 0px;
       }

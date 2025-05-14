@@ -21,6 +21,15 @@
           font: 900 75px/80px $red_hat;
           text-align:right;
           transform:translateY(80px);
+          @include breakpoint(1200px){
+            font: 900 50px/56px $red_hat;
+          }
+          @include breakpoint(720px){
+            font: 900 40px/46px $red_hat;
+          }
+          @include breakpoint(600px){
+            font: 900 30px/36px $red_hat;
+          }
         }
       }
     }

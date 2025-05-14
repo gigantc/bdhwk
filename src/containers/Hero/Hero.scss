@@ -40,8 +40,8 @@
           height:36px;
         }
         @include breakpoint(600px){
-          height:88px;
           font: 900 20px/24px $red_hat;
+          height:88px;
         }
       }
     }
