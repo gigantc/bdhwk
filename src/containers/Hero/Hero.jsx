@@ -1,9 +1,11 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import './Hero.scss';
 
 const Hero = () => {
-  
+
+  //////////////////////////////////////
+  // REFS & STATE
   const rotateRef = useRef(null);
 
   //////////////////////////////////////

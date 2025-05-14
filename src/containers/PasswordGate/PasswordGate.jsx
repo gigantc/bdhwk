@@ -1,19 +1,50 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebaseConfig.js';
+import gsap from 'gsap';
 import './PasswordGate.scss';
 
 const PasswordGate = ({ onAuth }) => {
-
+  
+  //////////////////////////////////////
+  // REFS & STATE
   const [input, setInput] = useState('');
-    const [showError, setShowError] = useState(false);
+  const [showError, setShowError] = useState(false);
+  const formAreaRef = useRef(null);
 
-  //password list
+
+  //////////////////////////////////////
+  //////////////////////////////////////
+  // PASSWORD LIST
   const approvedPasswords = {
     friend: 'Friend',
     carr0t: 'Creator',
   };
 
+
+  //////////////////////////////////////
+  // GSAP ANIMATION FUNCTION
+  const runSubmitAnimation = (ref, callback) => {
+    if (ref.current) {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          callback();
+        }
+      });
+      tl.to(ref.current, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.5,
+        ease: "power2.in"
+      });
+    } else {
+      callback();
+    }
+  };
+
+
+  //////////////////////////////////////
+  // FORM SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (approvedPasswords.hasOwnProperty(input)) {
@@ -22,22 +53,26 @@ const PasswordGate = ({ onAuth }) => {
       localStorage.setItem('authenticated', 'true');
       localStorage.setItem('authLabel', label);
 
-      await addDoc(collection(db, 'visitors'), {
-        name: label,
-        timestamp: new Date().toISOString(),
-      });
-
-      onAuth();
+      //we don't want to log me.
+      if (input !== 'carr0t' && label !== 'Creator') {
+        await addDoc(collection(db, 'visitors'), {
+          name: label,
+          timestamp: new Date().toISOString(),
+        });
+      };
+      // GSAP animation for .form-area before calling onAuth
+      runSubmitAnimation(formAreaRef, onAuth);
     } else {
       setShowError(true);
       setInput('');
     }
   };
 
+
   return (
     <>
     <div className="password-gate">
-      <div className="form-area">
+      <div className="form-area" ref={formAreaRef}>
         <h1>Welcome!</h1>
         <p>Please enter the password located on my resume.</p>
         <form onSubmit={handleSubmit}>
