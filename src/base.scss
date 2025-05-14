@@ -51,6 +51,8 @@ h1 {
 h2{
   margin:0px;
   font: 900 30px/34px $red_hat;
+  @include breakpoint(680px){font: 900 24px/34px $red_hat;}
+  @include breakpoint(500px){font: 900 18px/34px $red_hat;}
 }
 
 h3{
