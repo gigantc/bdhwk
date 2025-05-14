@@ -86,7 +86,7 @@ const PasswordGate = ({ onAuth }) => {
             }}
             autoFocus
           />
-          <button type="submit">Log In</button>
+          <button type="submit" className="cursorHover">Log In</button>
           {showError && 
           <p className="error">Incorrect password. <br />Please try again.</p>
           }

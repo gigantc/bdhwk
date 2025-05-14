@@ -14,7 +14,7 @@
       height:72px; width:100%;
       border-top:1px solid $gray;
       overflow:hidden;
-      cursor:pointer;
+      cursor:none;
       @include trans(0.4 s);
       &:hover{
         span{transform: translateY(-72px);}

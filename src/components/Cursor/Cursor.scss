@@ -14,11 +14,11 @@
 
   &.hovering{
     cursor:none;
-    //background: transparent url('../../assets/icons/cursor-link.svg') center no-repeat;
-    // background-position: 2.75px 2.5px; 
-    // background-size: 70%;
-    background-color:transparent;
-    border:2px solid $color;
+    background: transparent url('../../assets/mouse-arrow.svg') center no-repeat;
+    background-position: 3px 3px; 
+    background-size: 70%;
+    //background-color:transparent;
+    border:3px solid $color;
     transform: translate(-50%, -50%) scale(1.2);
     transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
   }

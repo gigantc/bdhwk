@@ -141,7 +141,7 @@ const WorkGallery = () => {
               state={{ from: '/#workGallery' }}
               >
               <div
-                className="card"
+                className="card cursorHover"
                 key={index}
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}

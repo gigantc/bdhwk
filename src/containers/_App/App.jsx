@@ -78,7 +78,13 @@ const App = () => {
 
 
   if (!authenticated) {
-    return <PasswordGate onAuth={() => setAuthenticated(true)} />;
+    return (
+      <>
+        <PasswordGate onAuth={() => setAuthenticated(true)} />
+        {/* Only include Cursor if device has a mouse */}
+        {showCursor && <Cursor />}
+      </>
+    );
   }
   
   return (
