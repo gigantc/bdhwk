@@ -22,7 +22,7 @@
       overflow:hidden;
       @include breakpoint(1200px){height:50px;}
       @include breakpoint(720px){height:40px;}
-      @include breakpoint(600px){height:84px;}
+      @include breakpoint(600px){height:88px;}
       .word{
         position:relative;
         height:56px; width:100%;
@@ -40,7 +40,7 @@
           height:36px;
         }
         @include breakpoint(600px){
-          height:84px;
+          height:88px;
           font: 900 20px/24px $red_hat;
         }
       }
