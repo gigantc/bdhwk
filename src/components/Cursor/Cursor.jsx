@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import './Cursor.scss';
 
 const Cursor = () => {
@@ -7,6 +8,7 @@ const Cursor = () => {
   //////////////////////////////////////
   // STATE
   const [isHovering, setIsHovering] = useState(false);
+  const location = useLocation();
 
   //////////////////////////////////////
   // RUN-TIME
@@ -49,6 +51,11 @@ const Cursor = () => {
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
     };
   }, []);
+
+  //resets the hover state when navigating
+  useEffect(() => {
+    setIsHovering(false);
+  }, [location]);
 
   //////////////////////////////////////
   // RENDER

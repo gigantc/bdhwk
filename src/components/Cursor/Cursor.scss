@@ -11,7 +11,7 @@
   transform: translate(-50%, -50%);
   z-index: 9999;
   transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
-
+  // border:3px solid tranparent;
   &.hovering{
     cursor:none;
     background: transparent url('../../assets/mouse-arrow.svg') center no-repeat;

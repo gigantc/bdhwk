@@ -19,6 +19,7 @@ const PasswordGate = ({ onAuth }) => {
   const approvedPasswords = {
     friend: 'Friend',
     carr0t: 'Creator',
+    choice: 'Choice',
   };
 
 

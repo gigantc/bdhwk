@@ -96,10 +96,9 @@ const App = () => {
             setCurrentLocation={setCurrentLocation}
           />
         </LocationContext.Provider>
+        {/* Only include Cursor if device has a mouse */}
+        {showCursor && <Cursor />}
       </Router>
-
-      {/* Only include Cursor if device has a mouse */}
-      {showCursor && <Cursor />}
     </>
   );
 };
