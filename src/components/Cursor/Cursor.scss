@@ -8,9 +8,10 @@
   background-color: $color;
   border-radius: 50%;
   pointer-events: none;
-  transform: translate(-50%, -50%);
+  border:2px solid $color;
+  transform: translate(-50%, -50%) rotate(45deg);
   z-index: 9999;
-  transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
   // border:3px solid tranparent;
   &.hovering{
     cursor:none;
@@ -18,7 +19,7 @@
     background-position: 3px 2px; 
     background-size: 70%;
     border:2px solid $color;
-    transform: translate(-50%, -50%) scale(1.2);
-    transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
   }
 }

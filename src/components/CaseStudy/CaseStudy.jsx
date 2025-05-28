@@ -7,7 +7,7 @@ import './CaseStudy.scss';
 
 
 
-const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}) => {
+const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery, video}) => {
 
 //////////////////////////////////////
 // REFS & STATE
@@ -15,6 +15,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
  const heroRef = useRef(null);
  const bodyRef = useRef(null);
  const galleryRef = useRef(null);
+ const videoRef = useRef(null);
 
 
 
@@ -149,6 +150,18 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery}
           {gallery.map((image, i) => (
             <div className="card" key={i}>
               <img src={image} alt="" />
+            </div>
+          ))}
+        </div>
+        )}
+
+        {video && (
+        <div className="video" ref={videoRef}>
+          {video.map((vid, i) => (
+            <div className="card" key={i}>
+              <video autoPlay muted loop playsInline>
+                <source src={vid} type="video/mp4" />
+              </video>
             </div>
           ))}
         </div>

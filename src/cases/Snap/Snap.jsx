@@ -5,9 +5,8 @@ import CaseStudy from "../../components/CaseStudy/CaseStudy.jsx"
 
 import './Snap.scss';
 
-
-// import Hero from './assets/hero.jpg'
-// import Gallery1 from './assets/gallery-table.jpg'
+import Hero from './assets/hero.jpg'
+import Video from './assets/snap_trimmed.mp4'
 // import Gallery2 from './assets/gallery-frame.jpg'
 // import Gallery3 from './assets/gallery-frame-2.jpg'
 // import Gallery4 from './assets/gallery-timeline.jpg'
@@ -27,15 +26,45 @@ const Snap = () => {
 
   //////////////////////////////////////
   // CONTENT
-  const heading = "Search. You know...it's so easy.";
+  const heading = "'We need you to build something that doesn't exist.'";
 
   const paragraphs = [
     <>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <strong>The Ask.</strong>
     </>,
     <>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-    </>
+      Snap came to us with an project that had never been done before: build a Snapchat lens that lives outside their app and on the web.
+    </>,
+    <>
+      Coca-Cola wanted a custom lens that could drive new account creation on their site. But Snapchat's platform didn't allow for user authentication to a site outside the app. So naturally, Snap asked us if we could figure it out.
+    </>,
+    <>
+      <strong>The Constraints.</strong>
+    </>,
+    <>
+      We had two weeks. No dev docs. No APIs. No roadmap. And zero time to follow the traditional linear process of UX -&gt; Wireframes -&gt; Design -&gt; Dev.
+    </>,
+    <>
+      We kicked everything off in parallel. Concept and design started immediately. At the same time, development got underway. We didn't wait for approvals or formal wireframes. There wasn't time. Everything was moving forward, all at once, to hit the 2 week deadline.
+    </>,
+    <>
+      <strong>The Build.</strong>
+    </>,
+    <>
+      To fit into Coca-Cola's existing ecosystem we were told we had to build the app using Vanilla JavaScript. Good times.
+    </>,
+    <>
+      We worked directly with Snap's engineers to define brand-new API routes in real time. Every time we needed to pull data, pass tokens, or validate input, their team spun up fresh endpoints for us. This wasn't just integration. It was invention.
+    </>,
+    <>
+      <strong>The Outcome.</strong>
+    </>,
+    <>
+      In the end, we delivered the first-ever web-based Snapchat filter, fully embedded into Coca-Cola's site. It was fast, frictionless, beautifully on-brand and it opened the door for future Snap lenses to break free of the app and live wherever the audience is.
+    </>,
+    <>
+      This project wasn't just about speed. It was about rewriting the rules in real time, under pressure, with no fallback plan. And my team delivered.
+    </>,
   ];
 
 
@@ -47,27 +76,28 @@ const Snap = () => {
       {showSplash && (
         <Splash 
         onComplete={() => setShowSplash(false)} 
-        title="Coca-Cola & Snapchat" 
+        title="Coca-Cola & Snap" 
         />
       )}
 
       {!showSplash && (
 
         <CaseStudy
-          title="Coca-Cola & Snapchat"
+          title="Coca-Cola & Snap"
           subtitle="The first ever web-based Snapchat filter."
-          // hero={Hero}
+          hero={Hero}
           heading={heading}
           writeup={[ ...paragraphs ]}
           info={{
             year: "2025",
-            client: "Snap",
+            client: "Coca-Cola via Snap",
             design: "Justin Allen",
             timeline: "2 weeks",
-            stack: "Node.js, Vite/React, Azure AI, SQL, Britecove",
+            stack: "Vite, Vanilla Javascript, Lens Studio",
           }}
-          // url="https://theunfilteredstory.org"
+          url="https://www.coca-cola.com/us/en/offerings/tastebud-map"
           // gallery={[Gallery1, Gallery2, Gallery3, Gallery7, Gallery5, Gallery6, Gallery4]}
+          video={[Video]}
         />
         
       )}

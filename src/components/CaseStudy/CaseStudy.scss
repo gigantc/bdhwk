@@ -136,6 +136,21 @@
       }
     }
 
+
+    .video{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin:0px 0px 150px 0px;
+      .card{
+        width:90%; height:auto;
+        max-width:500px;
+        video{
+          width:100%; height:auto;
+        }
+      }
+    }
+
     
     
 
