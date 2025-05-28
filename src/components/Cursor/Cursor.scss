@@ -15,7 +15,7 @@
   // border:3px solid tranparent;
   &.hovering{
     cursor:none;
-    background: transparent url('../../assets/mouse-arrow.svg') center no-repeat;
+    background: rgba(white, 0.9) url('../../assets/mouse-arrow.svg') center no-repeat;
     background-position: 3px 2px; 
     background-size: 70%;
     border:2px solid $color;
