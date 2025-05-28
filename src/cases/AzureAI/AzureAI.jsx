@@ -11,6 +11,8 @@ import Gallery1 from './assets/full-results.jpg'
 import Gallery2 from './assets/square-news.jpg'
 import Gallery3 from './assets/square-results.jpg'
 import Gallery4 from './assets/full-diagram.jpg'
+import Gallery5 from './assets/square-backend.jpg'
+
 
 
 
@@ -52,7 +54,7 @@ const AzureAI = () => {
       The AI layer handled misspellings, pulled synonyms, and populated smart suggestions with related people, places, and aircraft. This helped users find what they meant, not just what they typed.
     </>,
     <>
-      I also built a custom re-indexer, scheduled as a separate Node.js Azure Function, to refresh content every 48 hours, from all sources, without interrupting service.
+      I also built a custom re-indexer, as a separate Node.js Azure Function, scheduled to refresh content every 48 hours, without interrupting service. If any data needed to be inserted manually, there was a small control panel for administrators.
     </>,
     <>
       <strong>The Outcome.</strong>
@@ -93,7 +95,7 @@ const AzureAI = () => {
             role: "Solo Developer + Project Manager"
           }}
           // url="https://theunfilteredstory.org"
-          gallery={[Gallery1, Gallery2, Gallery3, Gallery4]}
+          gallery={[Gallery1, Gallery2, Gallery5, Gallery4]}
         />
         
       )}

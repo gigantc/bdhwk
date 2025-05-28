@@ -29,7 +29,7 @@ const WorkGallery = () => {
   // CARD DATA OBJECT
   const cards = [
     { 
-      title: "Azure", 
+      title: "Azure AI", 
       description: "AI Powered Search Engine",
       image: Azure,
       route: "azure-ai"
