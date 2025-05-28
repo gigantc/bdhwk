@@ -35,10 +35,10 @@ const Footer = () => {
             <a href="mailto:dan@badhawkworkshop.com">Email</a>
           </li>
           <li className="cursorHover">
-            <a href="https://www.linkedin.com/in/dfree/">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/dfree/" target="_blank">LinkedIn</a>
           </li>
           <li className="cursorHover">
-            <a href="https://github.com/gigantc">GitHub</a>
+            <a href="https://github.com/gigantc" target="_blank">GitHub</a>
           </li>
           <li className="cursorHover">
             <a href="tel:4808615448">Phone</a>

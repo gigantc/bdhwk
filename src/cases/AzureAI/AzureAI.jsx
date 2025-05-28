@@ -6,14 +6,11 @@ import CaseStudy from "../../components/CaseStudy/CaseStudy.jsx"
 import './AzureAI.scss';
 
 
-// import Hero from './assets/hero.jpg'
-// import Gallery1 from './assets/gallery-table.jpg'
-// import Gallery2 from './assets/gallery-frame.jpg'
-// import Gallery3 from './assets/gallery-frame-2.jpg'
-// import Gallery4 from './assets/gallery-timeline.jpg'
-// import Gallery5 from './assets/gallery-ai.jpg'
-// import Gallery6 from './assets/gallery-chair.jpg'
-// import Gallery7 from './assets/gallery-exhibit.jpg'
+import Hero from './assets/hero.jpg'
+import Gallery1 from './assets/full-results.jpg'
+import Gallery2 from './assets/square-news.jpg'
+import Gallery3 from './assets/square-results.jpg'
+import Gallery4 from './assets/full-diagram.jpg'
 
 
 
@@ -27,14 +24,41 @@ const AzureAI = () => {
 
   //////////////////////////////////////
   // CONTENT
-  const heading = "Search. You know...it's so easy.";
+  const heading = "Building an AI-Powered Search Engine Inside Boeing's Firewall";
 
   const paragraphs = [
     <>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <strong>The Problem.</strong>
     </>,
     <>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+      Boeing's Digital Safety Experience was spread across four disconnected environments: a Brightcove social platform, a custom React application, an RSS-based news system, and a web series hosted on Boeing.com. But users needed a single search experience. One box. One query. Results from everywhere.
+    </>,
+    <>
+      Off-the-shelf solutions weren't going to cut it. Not with Boeing's security restrictions. The project needed a fully custom, private search engine built inside a closed Azure cloud environment, with zero public exposure and total control over the data layer.
+    </>,
+    <>
+      <strong>The Approach.</strong>
+    </>,
+    <>
+      I took this one solo. No dev team, no PM handoff. I owned the architecture, the build, and the communication with Boeing's internal stakeholders.
+    </>,
+    <>
+      First, I mapped the system. The source data lived in SQL, with JSON mirrors stored in Azure Blob Storage to support faster access and re-indexing. I built a React front-end to serve users inside the protected Boeing ecosystem. Behind it, a Node.js backend powered by Azure Functions handled API routes, search queries, and result aggregation.
+    </>,
+    <>
+      At the core was <strong>Azure AI Search</strong>. It was flexible enough to ingest data from multiple sources, but raw enough that I had to normalize and transform inputs across all four content types. Nothing matched out of the box. Everything had to be flattened, equalized, and indexed manually.
+    </>,
+    <>
+      The AI layer handled misspellings, pulled synonyms, and populated smart suggestions with related people, places, and aircraft. This helped users find what they meant, not just what they typed.
+    </>,
+    <>
+      I also built a custom re-indexer, scheduled as a separate Node.js Azure Function, to refresh content every 48 hours, from all sources, without interrupting service.
+    </>,
+    <>
+      <strong>The Outcome.</strong>
+    </>,
+    <>
+      The result was a fully integrated, lightning-fast search engine capable of surfacing video, articles, internal content, and RSS feeds all through a single, secure interface. It felt seamless to users. But under the hood, it was a hand-built AI layer orchestrating data across platforms, formats, and security walls.
     </>
   ];
 
@@ -56,7 +80,7 @@ const AzureAI = () => {
         <CaseStudy
           title="Azure AI Search"
           subtitle="A Custom Search Engine that leverages AI"
-          // hero={Hero}
+          hero={Hero}
           heading={heading}
           writeup={[ ...paragraphs ]}
           info={{
@@ -64,10 +88,12 @@ const AzureAI = () => {
             client: "Boeing",
             design: "Ryan Lord, Maribel Barba",
             timeline: "4 months",
-            stack: "Node.js, Vite/React, Azure AI, SQL, Britecove",
+            platform: "Azure Cloud (internal)",
+            stack: "Azure AI, Azure Functions, Node.js, React, SQL",
+            role: "Solo Developer + Project Manager"
           }}
           // url="https://theunfilteredstory.org"
-          // gallery={[Gallery1, Gallery2, Gallery3, Gallery7, Gallery5, Gallery6, Gallery4]}
+          gallery={[Gallery1, Gallery2, Gallery3, Gallery4]}
         />
         
       )}
