@@ -138,7 +138,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery,
             </div>
 
             {url && (
-              <a href={url} target="_blank" className="cursorHover"><LinkIcon /> View Live Site</a>
+              <a href={url} target="_blank" className="cursorHover"><LinkIcon />View It Live</a>
             )}
           </div>
 

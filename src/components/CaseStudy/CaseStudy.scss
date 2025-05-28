@@ -52,16 +52,15 @@
       display:flex;
       align-items: flex-start;
       flex-wrap: wrap;
-      gap:150px;
+      gap:100px;
       @include breakpoint(1024px){gap:0px;}
       .info{
-        width:40%;
+        width:30%;
         @include breakpoint(1024px){
           width:100%;
           margin:0px 0px 70px 0px;
         }
         .box{
-          // border-top:2px solid $black;
           border-bottom:2px solid $black;
           padding:0px 0px 20px 0px;
           p{
@@ -71,7 +70,7 @@
             display:flex;
             span{
               font: 700 16px/24px $red_hat;
-              margin:0px 15px 0px 0px;
+              margin:0px 5px 0px 0px;
             }
           }
         }
@@ -79,18 +78,19 @@
           position:relative;
           display:block;
           margin:20px 0px 0px 6px;
-          font: 400 16px/20px $red_hat;
+          font: 700 20px/20px $red_hat;
           height:20px;
           @include trans(0.3s);
           svg{
             height:100%;
-            transform:translate(-6px, 5px);
+            transform:translate(-6px, 3px);
+            margin:0px 6px 0px 0px;
           }
         }
       }
 
       .writeup{
-        width:calc(60% - 150px);
+        width:calc(70% - 100px);
         margin:0px 0px 150px 0px;
         @include breakpoint(1024px){
           width:100%;
