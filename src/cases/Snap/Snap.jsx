@@ -26,7 +26,7 @@ const Snap = () => {
 
   //////////////////////////////////////
   // CONTENT
-  const heading = "'We need you to build something that doesn't exist.'";
+  const heading = `"We need you to build something that doesn't exist."`;
 
   const paragraphs = [
     <>
