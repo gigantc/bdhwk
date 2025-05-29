@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect  } from 'react';
 import { collection, addDoc } from 'firebase/firestore';
 import { db } from '../../firebaseConfig.js';
 import gsap from 'gsap';
@@ -10,17 +10,19 @@ const PasswordGate = ({ onAuth }) => {
   // REFS & STATE
   const [input, setInput] = useState('');
   const [showError, setShowError] = useState(false);
+  const [approvedPasswords, setApprovedPasswords] = useState({});
   const formAreaRef = useRef(null);
 
 
   //////////////////////////////////////
   //////////////////////////////////////
   // PASSWORD LIST
-  const approvedPasswords = {
-    friend: 'Friend',
-    carr0t: 'Creator',
-    choice: 'Choice',
-  };
+  useEffect(() => {
+    fetch('/passwords.json')
+      .then(res => res.json())
+      .then(data => setApprovedPasswords(data))
+      .catch(err => console.error('Failed to load password list', err));
+  }, []);
 
 
   //////////////////////////////////////

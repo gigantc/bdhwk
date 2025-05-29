@@ -48,28 +48,28 @@ const WorkGallery = () => {
     },
     { 
       title: "Business Jets", 
-      description: "Custom Wordpress Site",
+      description: "Custom Wordpress Theme",
       image: BBJ,
       route: "boeing-business-jets"
     },
-    { 
-      title: "Paramount", 
-      description: "SpongeBob Operation Seachange",
-      image: SeaChange,
-      route: "operation-sea-change"
-    },
-    { 
-      title: "Nickelodeon", 
-      description: "Custom Wordpress Site",
-      image: NickHelps,
-      route: "nick-helps"
-    },
-    { 
-      title: "Boeing", 
-      description: "The Safety Experience",
-      image: SExp,
-      route: "safety-experience"
-    }
+    // { 
+    //   title: "Paramount", 
+    //   description: "SpongeBob Operation Seachange",
+    //   image: SeaChange,
+    //   route: "operation-sea-change"
+    // },
+    // { 
+    //   title: "Nickelodeon", 
+    //   description: "Custom Wordpress Theme",
+    //   image: NickHelps,
+    //   route: "nick-helps"
+    // },
+    // { 
+    //   title: "Boeing", 
+    //   description: "The Safety Experience",
+    //   image: SExp,
+    //   route: "safety-experience"
+    // }
   ];
 
 
