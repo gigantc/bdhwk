@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
 import './Cursor.scss';
 
 const Cursor = () => {
@@ -8,7 +7,7 @@ const Cursor = () => {
   //////////////////////////////////////
   // STATE
   const [isHovering, setIsHovering] = useState(false);
-  const location = useLocation();
+  const [isInput, setIsInput] = useState(false);
 
   //////////////////////////////////////
   // RUN-TIME
@@ -25,16 +24,30 @@ const Cursor = () => {
     };
 
     const handleMouseOver = (e) => {
-      // Check if hovered element has cursorHover class
       if (e.target.closest('.cursorHover')) {
         setIsHovering(true);
+      }
+
+      if (
+        e.target.tagName === 'INPUT' ||
+        e.target.tagName === 'TEXTAREA' ||
+        e.target.isContentEditable
+      ) {
+        setIsInput(true);
       }
     };
 
     const handleMouseOut = (e) => {
-      // Reset hover state
       if (e.target.closest('.cursorHover')) {
         setIsHovering(false);
+      }
+
+      if (
+        e.target.tagName === 'INPUT' ||
+        e.target.tagName === 'TEXTAREA' ||
+        e.target.isContentEditable
+      ) {
+        setIsInput(false);
       }
     };
 
@@ -55,12 +68,12 @@ const Cursor = () => {
   //resets the hover state when navigating
   useEffect(() => {
     setIsHovering(false);
-  }, [location]);
+  }, []);
 
   //////////////////////////////////////
   // RENDER
   return (
-    <div className={`custom-cursor ${isHovering ? 'hovering' : ''}`} />
+    <div className={`custom-cursor ${isHovering ? 'hovering' : ''} ${isInput ? 'input' : ''}`} />
   );
 };
 

@@ -11,8 +11,7 @@
   border:2px solid $color;
   transform: translate(-50%, -50%) rotate(45deg);
   z-index: 9999;
-  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
-  // border:3px solid tranparent;
+  transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
   &.hovering{
     cursor:none;
     background: rgba(white, 0.9) url('../../assets/mouse-arrow.svg') center no-repeat;
@@ -22,4 +21,19 @@
     transform: translate(-50%, -50%) rotate(-45deg);
     transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out;
   }
+  &.input{
+    cursor:none;
+    width:3px; height:20px;
+    border:none;
+    border-radius:0px;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transition: background-color 0.4s ease-in-out, transform 0.4s ease-in-out, width 0.2s ease-in-out, border-radius 0.2s ease-in-out;
+  }
+}
+
+/* Hide system cursor over inputs, textareas, and contenteditables when hovered */
+input:hover,
+textarea:hover,
+[contenteditable="true"]:hover {
+  cursor: none;
 }
