@@ -78,12 +78,14 @@
           position:relative;
           display:block;
           margin:20px 0px 0px 6px;
-          font: 700 20px/20px $red_hat;
+          font: 700 18px/18px $roboto;
           height:20px;
+          text-transform:uppercase;
+          letter-spacing:0.5%;
           @include trans(0.3s);
           svg{
             height:100%;
-            transform:translate(-6px, 3px);
+            transform:translate(-6px, 4px);
             margin:0px 6px 0px 0px;
           }
         }
@@ -101,7 +103,13 @@
           font: 900 40px/46px $red_hat;
           @include breakpoint(680px){font: 900 28px/34px $red_hat;}
         }
-        p{font: 400 16px/22px $roboto;}
+        p{
+          font: 400 16px/22px $roboto;
+          a{
+            text-decaration:underline;
+            font: 700 16px/22px $roboto;
+          }
+        }
       }
     }
 
