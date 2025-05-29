@@ -6,14 +6,13 @@ import CaseStudy from "../../components/CaseStudy/CaseStudy.jsx"
 import './BBJ.scss';
 
 
-// import Hero from './assets/hero.jpg'
-// import Gallery1 from './assets/gallery-table.jpg'
-// import Gallery2 from './assets/gallery-frame.jpg'
-// import Gallery3 from './assets/gallery-frame-2.jpg'
-// import Gallery4 from './assets/gallery-timeline.jpg'
-// import Gallery5 from './assets/gallery-ai.jpg'
-// import Gallery6 from './assets/gallery-chair.jpg'
-// import Gallery7 from './assets/gallery-exhibit.jpg'
+import Hero from './assets/hero.jpg'
+import FullConfigure from './assets/full_configure.jpg'
+import FullPage from './assets/full_pagehero.jpg'
+import SquareComfort from './assets/square-comfort.jpg'
+import SquareMap from './assets/square-map.jpg'
+import SquareSelect from './assets/square-select.jpg'
+import SquareSupport from './assets/square-support.jpg'
 
 
 
@@ -27,14 +26,29 @@ const BBJ = () => {
 
   //////////////////////////////////////
   // CONTENT
-  const heading = "Businessing the Jets all up in this place.";
+  const heading = "A Custom Theme for Custom Planes.";
 
   const paragraphs = [
     <>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <strong>The Build.</strong>
     </>,
     <>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+      The Boeing Business Jets site is built on top of my custom <a href="https://github.com/gigantc/dfree-wp-boilerplate" target="_blank">WordPress boilerplate</a>, a stripped-down, cleanly architected starter framework designed with custom developers in mind. The backend features a completely custom Gutenberg experience, giving the client a modular, drag-and-drop editing workflow that actually makes sense. Creating pages, reordering content, and tweaking layouts is all easy, fast, foolproof and comfortable.
+    </>,
+    <>
+      I brought the static design to life with subtle, high-end animation touches that elevate the visual language without getting in the way. It's the kind of experience you have to scroll to really feel.
+    </>,
+    <>
+      <strong>Custom Features.</strong>
+    </>,
+    <>
+      Key components include a fully WP-admin-editable aircraft range map, and an interactive interior configurator that allows users to build their own custom layout and export it as a PDF for sales conversations. These aren't plugins — they're hand-built components designed specifically for Boeing's needs.
+    </>,
+    <>
+      <strong>My Philosophy.</strong>
+    </>,
+    <>
+      WordPress gets a bad rap in this industry and yeah, most of that is well deserved. Bloated themes, janky plugins, and spaghetti code are everywhere. But in the right hands, WordPress is still one of the most client-friendly platforms out there. It's familiar. It's flexible. And when you build everything custom without plugins (except ACF!), you stay in control. The client gets a backend they are comfortable in. And you don't wake up in a cold sweat because someone installed a mega-slider plugin that's going to ruin everything!
     </>
   ];
 
@@ -55,8 +69,8 @@ const BBJ = () => {
 
         <CaseStudy
           title="Business Jets"
-          subtitle="Wordpress Theme"
-          // hero={Hero}
+          subtitle="A Custom Theme"
+          hero={Hero}
           heading={heading}
           writeup={[ ...paragraphs ]}
           info={{
@@ -64,10 +78,12 @@ const BBJ = () => {
             client: "Boeing",
             design: "Ryan Lord",
             timeline: "3 Weeks",
-            stack: "PHP, Sass, Wordpress, Javascript",
+            Platform: "WordPress (Custom Theme)",
+            stack: "PHP, Sass, GSAP, Javascript",
+            plugin: "Advanced Custom Fields"
           }}
           url="https://businessjets.boeing.com/"
-          // gallery={[Gallery1, Gallery2, Gallery3, Gallery7, Gallery5, Gallery6, Gallery4]}
+          gallery={[FullPage, SquareMap, SquareSelect, FullConfigure, SquareSupport, SquareComfort]}
         />
         
       )}

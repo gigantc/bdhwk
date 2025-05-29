@@ -49,7 +49,7 @@ const WorkGallery = () => {
     { 
       title: "Business Jets", 
       description: "Custom Wordpress Site",
-       image: BBJ,
+      image: BBJ,
       route: "boeing-business-jets"
     },
     { 
