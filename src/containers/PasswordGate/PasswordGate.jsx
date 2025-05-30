@@ -20,7 +20,18 @@ const PasswordGate = ({ onAuth }) => {
   useEffect(() => {
     fetch('/passwords.json')
       .then(res => res.json())
-      .then(data => setApprovedPasswords(data))
+      .then(data => {
+        setApprovedPasswords(data);
+        // Check for password in URL param and auto-authenticate if valid
+        const params = new URLSearchParams(window.location.search);
+        const passParam = params.get('p');
+        if (passParam && data.hasOwnProperty(passParam)) {
+          const label = data[passParam];
+          localStorage.setItem('authenticated', 'true');
+          localStorage.setItem('authLabel', label);
+          onAuth();
+        }
+      })
       .catch(err => console.error('Failed to load password list', err));
   }, []);
 
