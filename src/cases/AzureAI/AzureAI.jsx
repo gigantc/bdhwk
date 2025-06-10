@@ -48,7 +48,7 @@ const AzureAI = () => {
       First, I mapped the system. The source data lived in SQL, with JSON mirrors stored in Azure Blob Storage to support faster access and re-indexing. I built a React front-end to serve users inside the protected Boeing ecosystem. Behind it, a Node.js backend powered by Azure Functions handled API routes, search queries, and result aggregation.
     </>,
     <>
-      At the core was <strong>Azure AI Search</strong>. It was flexible enough to ingest data from multiple sources, but raw enough that I had to normalize and transform inputs across all four content types. Nothing matched out of the box. Everything had to be flattened, equalized, and indexed manually.
+      At the core was <b>Azure AI Search</b>. It was flexible enough to ingest data from multiple sources, but raw enough that I had to normalize and transform inputs across all four content types. Nothing matched out of the box. Everything had to be flattened, equalized, and indexed manually.
     </>,
     <>
       The AI layer handled misspellings, pulled synonyms, and populated smart suggestions with related people, places, and aircraft. This helped users find what they meant, not just what they typed.
@@ -81,7 +81,7 @@ const AzureAI = () => {
 
         <CaseStudy
           title="Azure AI Search"
-          subtitle="A Custom Search Engine that leverages AI"
+          subtitle="A search engine that leverages AI"
           hero={Hero}
           heading={heading}
           writeup={[ ...paragraphs ]}

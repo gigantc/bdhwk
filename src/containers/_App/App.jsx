@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { LocationContext } from '../../context/LocationContext.jsx';
 import { useEffect, useRef, useState } from 'react';
 
@@ -39,6 +40,7 @@ const AppRoutes = ({ setPreviousLocation, setCurrentLocation }) => {
       <Route path="operation-sea-change" element={<SeaChange />} />
       <Route path="snap-coca-cola" element={<Snap />} />
       <Route path="unfiltered" element={<Unfiltered />} />
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };

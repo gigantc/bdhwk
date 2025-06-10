@@ -11,6 +11,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery,
 
 //////////////////////////////////////
 // REFS & STATE
+const [imageLoaded, setImageLoaded] = useState(false);
  const titleRef = useRef(null);
  const heroRef = useRef(null);
  const bodyRef = useRef(null);
@@ -36,6 +37,10 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery,
 //////////////////////////////////////
 // ANIMATIONS
  useEffect(() => {
+
+    //don't run until the hero image has fully loaded
+    if (!hero || !imageLoaded) return;
+
     gsap.fromTo(titleRef.current,
       { 
         y: -180, 
@@ -94,7 +99,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery,
     )
 
 
-  }, [])
+  }, [imageLoaded, hero])
 
 
   //////////////////////////////////////
@@ -113,7 +118,7 @@ const CaseStudy = ({title, subtitle, hero, heading, writeup, info, url, gallery,
 
         {hero && (
         <div className="image" ref={heroRef}>
-          <img src={hero} alt="" />
+          <img src={hero} onLoad={() => setImageLoaded(true)} />
         </div>
         )}
 

@@ -19,6 +19,7 @@
 
     .title{
       margin:0px 0px 70px 0px;
+      opacity:0;
       h1{
         text-align:center;
         font: 900 70px/76px $red_hat;
@@ -39,6 +40,7 @@
       border-radius:25px;
       overflow:hidden;
       margin:0px 0px 70px 0px;
+      opacity:0;
       @include breakpoint(900px){height:387px;}
       @include breakpoint(500px){height:287px;}
       img{
@@ -53,6 +55,7 @@
       align-items: flex-start;
       flex-wrap: wrap;
       gap:100px;
+      opacity:0;
       @include breakpoint(1024px){gap:0px;}
       .info{
         width:30%;
@@ -107,6 +110,10 @@
           a{
             font: 700 16px/22px $roboto;
           }
+          strong{
+            margin:20px 0px 0px 0px;
+            display:inline-block;
+          }
         }
       }
     }
@@ -119,6 +126,7 @@
       flex-wrap:wrap;
       gap: 50px 20px;
       margin:0px 0px 150px 0px;
+      opacity:0;
       @include breakpoint(900px){gap: 0px;}
       .card{
         position:relative;

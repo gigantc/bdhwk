@@ -6,14 +6,11 @@ import CaseStudy from "../../components/CaseStudy/CaseStudy.jsx"
 import './SafetyExperience.scss';
 
 
-// import Hero from './assets/hero.jpg'
-// import Gallery1 from './assets/gallery-table.jpg'
-// import Gallery2 from './assets/gallery-frame.jpg'
-// import Gallery3 from './assets/gallery-frame-2.jpg'
-// import Gallery4 from './assets/gallery-timeline.jpg'
-// import Gallery5 from './assets/gallery-ai.jpg'
-// import Gallery6 from './assets/gallery-chair.jpg'
-// import Gallery7 from './assets/gallery-exhibit.jpg'
+import Hero from './assets/hero.jpg'
+import Gallery1 from './assets/gallery_wide_2.jpg'
+import Gallery2 from './assets/gallery_sq.jpg'
+import Gallery3 from './assets/gallery_sq_2.jpg'
+import Gallery4 from './assets/gallery_wide.jpg'
 
 
 
@@ -27,15 +24,42 @@ const SafetyExperience = () => {
 
   //////////////////////////////////////
   // CONTENT
-  const heading = "Experiencing Saefty One Safety at a time.";
+  const heading = "Delve into Aerospace History.";
 
   const paragraphs = [
     <>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <strong>The Initiative.</strong>
     </>,
     <>
-      Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-    </>
+      The Boeing Safety Experience was part of a multi-million dollar commitment to reframe how Boeing spoke internally about safety. My team was responsible for two core components:
+    </>,
+    <>
+      1. A digital space where employees could engage in real conversations about safety, access videos, resources, and connect across roles and departments from the factory floor to the executive suite.
+    </>,
+    <>
+      2. An interactive timeline that traced key moments in aviation history and showed how those events shaped Boeing's safety protocols today.
+    </>,
+    <>
+      <strong>My Role.</strong>
+    </>,
+    <>
+      I was part of the project's leadership team from the start, sitting on the Boeing Safety Committee and helping guide strategic direction, scope, and planning. We ran the effort using Agile and Scrum methodologies, beginning with deep user story work to understand the full spectrum of employees who would use the system.
+    </>,
+    <>
+      From there, I helped lead the end-to-end delivery pipeline: wireframes, sprint planning, stakeholder check-ins, and vendor evaluations. One of my key responsibilities was helping select the right data visualization partners for the timeline component. We vetted experts from around the globe to make sure the timeline wasn't just informative but emotionally resonant, fun to play with, and kept people coming back.
+    </>,
+    <>
+      <strong>Cross-Functional Leadership.</strong>
+    </>,
+    <>
+      This was a highly visible initiative inside Boeing, with direct involvement from leadership at all levels including executive sponsors and members of the C-Suite. I played a key role in bridging communication between my team at R&R Partners and Boeing's internal stakeholders, ensuring alignment across technical, creative, and leadership groups. That cross-functional collaboration was critical to keeping the project on track, on message, and ready for launch against some very real executive expectations.
+    </>,
+    <>
+      <strong>The Build.</strong>
+    </>,
+    <>
+      This wasn't a linear build. It was iterative, feedback-driven, and people-first. We launched internally and continued to evolve the platform for over 12 months before we pushed the timeline public. They other parts of the platform are a huge success, but are still internal only.
+    </>,
   ];
 
 
@@ -47,7 +71,7 @@ const SafetyExperience = () => {
       {showSplash && (
         <Splash 
         onComplete={() => setShowSplash(false)} 
-        title="Azure AI Search" 
+        title="The Safety Experience" 
         />
       )}
 
@@ -55,19 +79,21 @@ const SafetyExperience = () => {
 
         <CaseStudy
           title="Boeing Safety Experience"
-          subtitle="Project"
-          // hero={Hero}
+          subtitle="An interactive data visualization timeline"
+          hero={Hero}
           heading={heading}
           writeup={[ ...paragraphs ]}
           info={{
             year: "2024",
             client: "Boeing",
+            Scope: "Internal Platform + Aerospace Safety Timeline",
+            Budget: "Part of a 7-figure enterprise initiative",
+            Role: "Leadership, Strategy, Project Management",
             design: "Ryan Lord, Maribel Barba",
-            timeline: "8 months",
-            stack: "Node.js, Vite/React, Azure AI, SQL, Britecove",
+            timeline: "1 year",
           }}
-          // url="https://theunfilteredstory.org"
-          // gallery={[Gallery1, Gallery2, Gallery3, Gallery7, Gallery5, Gallery6, Gallery4]}
+          url="https://www.boeing.com/safety/safetyexperience"
+          gallery={[Gallery1, Gallery2, Gallery3, Gallery4]}
         />
         
       )}

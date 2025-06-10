@@ -42,7 +42,7 @@ const BBJ = () => {
       <strong>Features.</strong>
     </>,
     <>
-      Key components include a fully WP-admin-editable aircraft range map, and an interactive interior configurator that allows users to build their own layout and export it as a PDF for sales conversations. These aren't plugins - they are hand-built components designed specifically for Boeing's needs.
+      Key components include a fully WP-admin-editable aircraft range map, and an interactive interior configurator that allows users to build their own layout and export it as a PDF for sales conversations. These aren't plugins, they are hand-built components designed specifically for Boeing's needs.
     </>,
     <>
       <strong>Why Wordpress?!</strong>

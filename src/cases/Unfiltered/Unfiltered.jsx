@@ -34,13 +34,13 @@ const Unfiltered = () => {
       The State of Utah tasked R&R Partners with creating a temporary art installation to expose Big Tobacco's legacy of manipulative, targeted advertising. The result was a visceral, immersive exhibit called “Unfiltered." It was a huge success. It confronted visitors with walls of original ads, old magazine spreads, and TV commercials that showcased the industry's aggressive tactics in communities of color.
     </>,
     <>
-      <strong>But once the installation came down, we didn't want the message to disappear.</strong>
+      <b>But once the installation came down, we didn't want the message to disappear.</b>
     </>,
     <>
       With no budget and a tight window, we set out to reimagine the installation digitally. The concept was simple, recreate the sensory overload of the original installation through a "scrollytelling" experience. Users are pulled through a hijacked scroll narrative that mimics the exhibit's multi-room experience.
     </>,
     <>
-      The build was quick. <strong>Just eight days marked for development.</strong> I had to prioritize ruthlessly, move fast, and manage a ton of stress. There were many compromises, but the end result still punches above its weight as a standalone digital experience.
+      The build was quick. <b>Just eight days marked for development.</b> I had to prioritize ruthlessly, move fast, and manage a ton of stress. There were many compromises, but the end result still punches above its weight as a standalone digital experience.
     </>,
     <>
       Unfiltered now lives on as a digital story that doesn't just preserve the exhibit, it reframes it. Even with zero budget the site captures the spirit of the original and extends its reach far beyond gallery walls.

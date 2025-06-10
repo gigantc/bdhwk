@@ -52,24 +52,24 @@ const WorkGallery = () => {
       image: BBJ,
       route: "boeing-business-jets"
     },
+    { 
+      title: "Nickelodeon", 
+      description: "WP Backend Reinvented",
+      image: NickHelps,
+      route: "nick-helps"
+    },
     // { 
     //   title: "Paramount", 
     //   description: "SpongeBob Operation Seachange",
     //   image: SeaChange,
     //   route: "operation-sea-change"
     // },
-    // { 
-    //   title: "Nickelodeon", 
-    //   description: "Custom Wordpress Theme",
-    //   image: NickHelps,
-    //   route: "nick-helps"
-    // },
-    // { 
-    //   title: "Boeing", 
-    //   description: "The Safety Experience",
-    //   image: SExp,
-    //   route: "safety-experience"
-    // }
+    { 
+      title: "Boeing", 
+      description: "The Safety Experience",
+      image: SExp,
+      route: "safety-experience"
+    }
   ];
 
 
