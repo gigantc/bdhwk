@@ -4,6 +4,8 @@ import { db } from '../../firebaseConfig.js';
 import gsap from 'gsap';
 import './PasswordGate.scss';
 
+
+
 const PasswordGate = ({ onAuth }) => {
   
   //////////////////////////////////////
@@ -11,28 +13,78 @@ const PasswordGate = ({ onAuth }) => {
   const [input, setInput] = useState('');
   const [showError, setShowError] = useState(false);
   const [approvedPasswords, setApprovedPasswords] = useState({});
+  const hasLoggedUrlVisitRef = useRef(false);
   const formAreaRef = useRef(null);
+
+
+
+  //////////////////////////////////////
+  //////////////////////////////////////
+  // LOGS A USER TO FIREBASE
+
+  //this just makes a nice readable platform
+  const getPlatform = () => {
+    const ua = navigator.userAgent;
+
+    if (/android/i.test(ua)) return 'Android';
+    if (/iPad|iPhone|iPod/.test(ua) && !window.MSStream) return 'iOS';
+    if (/Win(dows)?/.test(ua)) return 'Windows';
+    if (/Mac/.test(ua)) return 'macOS';
+    if (/Linux/.test(ua)) return 'Linux';
+
+    return 'Unknown';
+  };
+
+
+  // the actual log
+  const logVisitorToFirebase = async (label, method) => {
+    //get the platform
+    const platform = getPlatform();
+
+    await addDoc(collection(db, 'visitors'), {
+      name: label,
+      timestamp: new Date().toLocaleString(),
+      method: method,
+      platform: platform,
+      userAgent: navigator.userAgent,
+    });
+    hasLoggedUrlVisitRef.current = true;
+  };
 
 
   //////////////////////////////////////
   //////////////////////////////////////
   // PASSWORD LIST
   useEffect(() => {
-    fetch('/passwords.json')
-      .then(res => res.json())
-      .then(data => {
+    const checkUrlPassword = async () => {
+      if (hasLoggedUrlVisitRef.current) return;
+
+      try {
+        const res = await fetch('/passwords.json');
+        const data = await res.json();
         setApprovedPasswords(data);
-        // Check for password in URL param and auto-authenticate if valid
+
         const params = new URLSearchParams(window.location.search);
         const passParam = params.get('p');
+
         if (passParam && data.hasOwnProperty(passParam)) {
           const label = data[passParam];
           localStorage.setItem('authenticated', 'true');
           localStorage.setItem('authLabel', label);
           onAuth();
+
+          //we don't want to log me.
+          if (passParam !== 'carr0t' && label !== 'Creator') {
+            hasLoggedUrlVisitRef.current = true;
+            await logVisitorToFirebase(label, 'url');
+          }
         }
-      })
-      .catch(err => console.error('Failed to load password list', err));
+      } catch (err) {
+        console.error('Failed to load password list', err);
+      }
+    };
+
+    checkUrlPassword();
   }, []);
 
 
@@ -69,10 +121,8 @@ const PasswordGate = ({ onAuth }) => {
 
       //we don't want to log me.
       if (input !== 'carr0t' && label !== 'Creator') {
-        await addDoc(collection(db, 'visitors'), {
-          name: label,
-          timestamp: new Date().toISOString(),
-        });
+        hasLoggedUrlVisitRef.current = true;
+        await logVisitorToFirebase(label, 'password');
       };
       // GSAP animation for .form-area before calling onAuth
       runSubmitAnimation(formAreaRef, onAuth);
