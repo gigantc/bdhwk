@@ -113,7 +113,9 @@ const PasswordGate = ({ onAuth }) => {
   // FORM SUBMIT
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (approvedPasswords.hasOwnProperty(input)) {
+    const normalized = input.toLowerCase();
+    if (approvedPasswords.hasOwnProperty(normalized)){
+
       const label = approvedPasswords[input];
 
       localStorage.setItem('authenticated', 'true');
@@ -123,7 +125,7 @@ const PasswordGate = ({ onAuth }) => {
       if (input !== 'carr0t' && label !== 'Creator') {
         hasLoggedUrlVisitRef.current = true;
         await logVisitorToFirebase(label, 'password');
-      };
+      }
       // GSAP animation for .form-area before calling onAuth
       runSubmitAnimation(formAreaRef, onAuth);
     } else {
