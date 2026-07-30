@@ -116,13 +116,13 @@ const PasswordGate = ({ onAuth }) => {
     const normalized = input.toLowerCase();
     if (approvedPasswords.hasOwnProperty(normalized)){
 
-      const label = approvedPasswords[input];
+      const label = approvedPasswords[normalized];
 
       localStorage.setItem('authenticated', 'true');
       localStorage.setItem('authLabel', label);
 
       //we don't want to log me.
-      if (input !== 'carr0t' && label !== 'Creator') {
+      if (normalized !== 'carr0t' && label !== 'Creator') {
         hasLoggedUrlVisitRef.current = true;
         await logVisitorToFirebase(label, 'password');
       }

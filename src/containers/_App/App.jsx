@@ -17,6 +17,7 @@ import Unfiltered from '../../cases/Unfiltered/Unfiltered.jsx';
 
 
 import PasswordGate from '../PasswordGate/PasswordGate.jsx';
+import Views from '../Views/Views.jsx';
 import './App.scss';
 
 
@@ -42,6 +43,7 @@ const AppRoutes = ({ setPreviousLocation, setCurrentLocation }) => {
       <Route path="searhc" element={<SEARHC />} />
       <Route path="snap-coca-cola" element={<Snap />} />
       <Route path="unfiltered" element={<Unfiltered />} />
+      <Route path="views" element={<Views />} />
       <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
