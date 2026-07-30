@@ -11,6 +11,7 @@ import BBJ from "../../assets/work-bbj.jpg"
 import Snap from "../../assets/work-snap.jpg"
 import Azure from "../../assets/work-azure-search.jpg"
 import SExp from "../../assets/work-safety-experience.jpg"
+import SEARHC from "../../assets/work-searhc.jpg"
 
 import './WorkGallery.scss';
 
@@ -28,6 +29,12 @@ const WorkGallery = () => {
   //////////////////////////////////////
   // CARD DATA OBJECT
   const cards = [
+    {
+      title: "SEARHC",
+      description: "SE Alaska Health Care System",
+      image: SEARHC,
+      route: "searhc"
+    },
     { 
       title: "Azure AI", 
       description: "AI Powered Search Engine",
@@ -47,10 +54,10 @@ const WorkGallery = () => {
       route: "snap-coca-cola"
     },
     { 
-      title: "Business Jets", 
-      description: "Custom Wordpress Theme",
-      image: BBJ,
-      route: "boeing-business-jets"
+      title: "Boeing", 
+      description: "The Safety Experience",
+      image: SExp,
+      route: "safety-experience"
     },
     { 
       title: "Nickelodeon", 
@@ -58,18 +65,19 @@ const WorkGallery = () => {
       image: NickHelps,
       route: "nick-helps"
     },
+    { 
+      title: "Business Jets", 
+      description: "Custom Wordpress Theme",
+      image: BBJ,
+      route: "boeing-business-jets"
+    },
     // { 
     //   title: "Paramount", 
     //   description: "SpongeBob Operation Seachange",
     //   image: SeaChange,
     //   route: "operation-sea-change"
     // },
-    { 
-      title: "Boeing", 
-      description: "The Safety Experience",
-      image: SExp,
-      route: "safety-experience"
-    }
+    
   ];
 
 

@@ -11,6 +11,7 @@ import BBJ from '../../cases/BBJ/BBJ.jsx';
 import NickHelps from '../../cases/NickHelps/NickHelps.jsx';
 import SafetyExperience from '../../cases/SafetyExperience/SafetyExperience.jsx';
 import SeaChange from '../../cases/SeaChange/SeaChange.jsx';
+import SEARHC from '../../cases/SEARHC/SEARHC.jsx';
 import Snap from '../../cases/Snap/Snap.jsx';
 import Unfiltered from '../../cases/Unfiltered/Unfiltered.jsx';
 
@@ -38,6 +39,7 @@ const AppRoutes = ({ setPreviousLocation, setCurrentLocation }) => {
       <Route path="nick-helps" element={<NickHelps />} />
       <Route path="safety-experience" element={<SafetyExperience />} />
       <Route path="operation-sea-change" element={<SeaChange />} />
+      <Route path="searhc" element={<SEARHC />} />
       <Route path="snap-coca-cola" element={<Snap />} />
       <Route path="unfiltered" element={<Unfiltered />} />
       <Route path="*" element={<Navigate to="/" replace />} />
