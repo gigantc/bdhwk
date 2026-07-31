@@ -60,6 +60,7 @@ const Views = () => {
             <span className="name">Name</span>
             <span className="platform">Platform</span>
             <span className="timestamp">Timestamp</span>
+            <span className="timezone">Timezone</span>
             <span className="ua">User Agent</span>
           </div>
 
@@ -73,6 +74,7 @@ const Views = () => {
               <span className="name">{row.name}</span>
               <span className="platform">{row.platform}</span>
               <span className="timestamp">{row.timestamp}</span>
+              <span className="timezone">{row.timezone || '—'}</span>
               <span className="ua">{row.userAgent}</span>
             </div>
           ))}

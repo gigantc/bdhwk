@@ -46,6 +46,8 @@ const PasswordGate = ({ onAuth }) => {
       timestamp: new Date().toLocaleString(),
       method: method,
       platform: platform,
+      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+      tzOffset: new Date().getTimezoneOffset(),
       userAgent: navigator.userAgent,
     });
     hasLoggedUrlVisitRef.current = true;
